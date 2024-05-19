@@ -1,4 +1,3 @@
-<footer>
   <div class="credits-name">
     <ul class="credits-list">
       <li>LOUAYE SAGHIR</li>
@@ -11,4 +10,3 @@
     © 2024 Copyright:
     <a class="text-credits" href="https://cytech.cyu.fr">CY TECH</a>
   </div>
-</footer>

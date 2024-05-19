@@ -1,13 +1,13 @@
 <a href="index.php"><img id="logo" src="/source/icon.png" alt="icon"></a>
 
 <nav>
-    <div class="countries">Countries</div>
+    <button id="btncountries">Countries</button>
     <!-- if not logged -->
-    <div class="login">Log in</div>
-    <div class="signup">Sign up</div>
+    <button id="btnlogin">Log in</button>
+    <button id="btnsignin">Sign up</button>
 
     <!-- if logged 
-    <div class="signup">Sign out</div>
+    <button id="btnsignup">Sign out</button>
     -->
 
 </nav>

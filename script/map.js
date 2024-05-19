@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const france = {
         html : document.querySelector('.france'),
         name : "France"
@@ -52,11 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const countries = [france, spain, japan, australia, germany, morocco, usa, russia, brasil, southafrica];
 
     countries.forEach(country => {
-        country.html.addEventListener('mouseover', function () {
+        country.html.addEventListener('mouseover', () => {
             country.html.classList.add("hovered");
         });
 
-        country.html.addEventListener('mouseout', function () {
+        country.html.addEventListener('mouseout', () => {
             country.html.classList.remove("hovered");
         });
     });

@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../style/footer.css">
     <link rel="stylesheet" type="text/css" href="../style/header.css">
     <link rel="stylesheet" type="text/css" href="../style/map.css">
-    <script type="text/javascript" src="../script/main.js"></script>
+    <script type="text/javascript" src="../script/map.js"></script>
+    <script type="text/javascript" src="../script/header.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +87,9 @@
         </div>
     </main>
 
-    <?php require_once(__DIR__ . '/footer.php'); ?>
+    <footer>
+        <?php require_once(__DIR__ . '/footer.php'); ?>
+    </footer>
 </body>
 
 </html>
