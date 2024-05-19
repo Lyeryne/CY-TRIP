@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Cy-Trip </title>
+    <title>Cy-Trip</title>
     <link rel="icon" href="source/plane.png">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/footer.css">
