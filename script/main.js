@@ -22,3 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// document.addEventListener('scroll', function(){
+//     const 
+// });
