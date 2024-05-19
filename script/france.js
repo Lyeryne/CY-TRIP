@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let video = document.getElementById("bgvideo");
-    let button = document.getElementById("controlButton");
+    const video = document.querySelector("#bgvideo")
+    const button = document.getElementById("controlButton");
 
     function playpause(){
         if(video.paused){
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.innerHTML = "&#9658;"; // Icône Play
         }
 
-        button.style.display = "block";
+        button.style.display = "flex";
         button.style.opacity = "1";
 
         setTimeout(function(){
@@ -23,4 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
     video.addEventListener("click", ()=>{
         playpause();
     })
+
+
+
+        
+        
+    
 })
