@@ -16,7 +16,7 @@
 
 <body>
     <header>
-
+        <?php require_once(__DIR__ . '/header.php'); ?>
     </header>
 
     <main>
@@ -24,43 +24,63 @@
             <img id="worldmap" src="source/worldmap.jpg" alt="worldmap">
 
             <a href="">
-                <div class="france"><div class="FR name">France</div></div>
+                <div class="france">
+                    <div class="FR name">France</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="spain"><div class="SP name">Spain</div></div>
+                <div class="spain">
+                    <div class="SP name">Spain</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="japan"><div class="JP name">Japan</div></div>
+                <div class="japan">
+                    <div class="JP name">Japan</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="australia"><div class="AU name">Australia</div></div>
+                <div class="australia">
+                    <div class="AU name">Australia</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="germany"><div class="GE name">Germany</div></div>
+                <div class="germany">
+                    <div class="GE name">Germany</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="morocco"><div class="MR name">Morocco</div></div>
+                <div class="morocco">
+                    <div class="MR name">Morocco</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="usa"><div class="USA name">USA</div></div>
+                <div class="usa">
+                    <div class="USA name">USA</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="russia"><div class="RU name">Russia</div></div>
+                <div class="russia">
+                    <div class="RU name">Russia</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="brasil"><div class="BR name">Brasil</div></div>
+                <div class="brasil">
+                    <div class="BR name">Brasil</div>
+                </div>
             </a>
 
             <a href="">
-                <div class="southafrica"><div class="SA name">South<br>Africa</div></div>
+                <div class="southafrica">
+                    <div class="SA name">South<br>Africa</div>
+                </div>
             </a>
         </div>
     </main>
