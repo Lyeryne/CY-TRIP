@@ -1,34 +1,63 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const france = document.querySelector('.france');
-    const spain = document.querySelector('.spain');
-    const japan = document.querySelector('.japan');
-    const australia = document.querySelector('.australia');
-    const germany = document.querySelector('.germany');
-    const morocco = document.querySelector('.morocco');
-    const usa = document.querySelector('.usa');
-    const russia = document.querySelector('.russia');
-    const brasil = document.querySelector('.brasil');
-    const southafrica = document.querySelector('.southafrica');
+    const france = {
+        html : document.querySelector('.france'),
+        name : "France"
+    }
+
+    const spain = {
+        html : document.querySelector('.spain'),
+        name : "Spain"
+    }
+
+    const japan = {
+        html : document.querySelector('.japan'),
+        name : "Japan"
+    }
+
+    const australia = {
+        html : document.querySelector('.australia'),
+        name : "Australia"
+    }
+
+    const germany = {
+        html : document.querySelector('.germany'),
+        name : "Germany"
+    }
+
+    const morocco = {
+        html : document.querySelector('.morocco'),
+        name : "Morocco"
+    }
+
+    const usa = {
+        html : document.querySelector('.usa'),
+        name : "USA"
+    }
+
+    const russia = {
+        html : document.querySelector('.russia'),
+        name : "Russia"
+    }
+
+    const brasil = {
+        html : document.querySelector('.brasil'),
+        name : "Brasil"
+    }
+
+    const southafrica = {
+        html : document.querySelector('.southafrica'),
+        name : "South Africa"
+    }
 
     const countries = [france, spain, japan, australia, germany, morocco, usa, russia, brasil, southafrica];
 
     countries.forEach(country => {
-        country.addEventListener('mouseover', function () {
-            country.classList.add("hovered");
+        country.html.addEventListener('mouseover', function () {
+            country.html.classList.add("hovered");
         });
 
-        country.addEventListener('mouseout', function () {
-            country.classList.remove("hovered");
+        country.html.addEventListener('mouseout', function () {
+            country.html.classList.remove("hovered");
         });
     });
-});
-
-const nav = document.querySelector("nav");
-window.addEventListener('scroll', function () {
-    if (window.scrollY > 120) {
-        nav.style.top = 0;
-    }
-    else {
-        nav.style.top = "-50px";
-    }
 });

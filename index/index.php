@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <title>Cy-Trip</title>
-    <link rel="icon" href="source/plane.png">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <link rel="stylesheet" type="text/css" href="style/footer.css">
-    <link rel="stylesheet" type="text/css" href="style/map.css">
-    <script type="text/javascript" src="script/main.js"></script>
+    <title>Cy Trip</title>
+    <link rel="icon" href="../source/main.png">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="../style/footer.css">
+    <link rel="stylesheet" type="text/css" href="../style/header.css">
+    <link rel="stylesheet" type="text/css" href="../style/map.css">
+    <script type="text/javascript" src="../script/main.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,63 +22,63 @@
 
     <main>
         <div class="map">
-            <img id="worldmap" src="source/worldmap.jpg" alt="worldmap">
+            <img id="worldmap" src="../source/worldmap.jpg" alt="worldmap">
 
-            <a href="">
+            <a href="france.php">
                 <div class="france">
                     <div class="FR name">France</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="spain">
                 <div class="spain">
                     <div class="SP name">Spain</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="japan">
                 <div class="japan">
                     <div class="JP name">Japan</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="australia">
                 <div class="australia">
                     <div class="AU name">Australia</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="germany">
                 <div class="germany">
                     <div class="GE name">Germany</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="morocco">
                 <div class="morocco">
                     <div class="MR name">Morocco</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="usa">
                 <div class="usa">
                     <div class="USA name">USA</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="russia">
                 <div class="russia">
                     <div class="RU name">Russia</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="brasil">
                 <div class="brasil">
                     <div class="BR name">Brasil</div>
                 </div>
             </a>
 
-            <a href="">
+            <a href="southafrica">
                 <div class="southafrica">
                     <div class="SA name">South<br>Africa</div>
                 </div>
