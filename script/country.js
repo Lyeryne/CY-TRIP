@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
     const starone = document.querySelector(".one")
     const startwo = document.querySelector(".two")
     const starthree = document.querySelector(".three")
