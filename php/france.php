@@ -16,9 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <?php require_once(__DIR__."/header.php") ?>    
-        </header>
+        <?php require_once(__DIR__."/header.php") ?>    
 
         <main>
             <div id="bgvideo">

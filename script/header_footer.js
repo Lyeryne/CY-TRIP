@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (scrollpos > lastscrollpos) {
             header.style.transform = "translateY(-100%)"
             if (isopened === 1) {
-                menuderoulant.style.transform = "translateY(46.7vw)"
+                menuderoulant.style.transform = "translateY(41vw)"
             }
         }
         else
