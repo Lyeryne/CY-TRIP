@@ -70,5 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
     starone.addEventListener("mouseout", () => {
         rectone.style.transform = "translateX(0)"
     })
-
 })
