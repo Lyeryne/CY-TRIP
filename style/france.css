@@ -5,22 +5,22 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
+    bottom: 8%;
     z-index: 0;
 }
 
-#vimeoPlayer {
+#videasPlayer {
     position: absolute; 
     top: 0; 
     left: 0; 
     width: 100%; 
-    height: 106%;
+    height: 113%;
 }
 
 .welcome{
     position: relative;
     margin: auto;
-    margin-top: 45%;
+    margin-top: 46%;
     height: 16vw;
     width: 65vw;
     display: flex;

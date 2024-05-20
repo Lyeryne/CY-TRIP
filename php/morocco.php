@@ -16,13 +16,11 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <?php require_once(__DIR__."/header.php") ?>    
-        </header>
+        <?php require_once(__DIR__."/header.php") ?>    
 
         <main>
             <div id="bgvideo">
-                <iframe id="vimeoPlayer" src="https://app.videas.fr/embed/media/b5ff3975-6527-4079-8872-df1e34f068b4/?autoplay=1&loop=1&muted=1&background=1" frameborder="0"></iframe>
+                <iframe id="videasPlayer" src="https://app.videas.fr/embed/media/b5ff3975-6527-4079-8872-df1e34f068b4/?autoplay=1&loop=1&muted=1&background=1" frameborder="0"></iframe>
             </div>
 
             <div class="welcome">

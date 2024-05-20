@@ -7,9 +7,10 @@ header {
     height: 5.8vw;
     border-bottom: solid rgb(29, 147, 113) 3px;
     overflow: hidden;
-    z-index: 2;
+    z-index: 3;
     background-color: whitesmoke;
-    transition : transform 1.2s ease; 
+    transition : transform 1s ease; 
+    overflow: visible;
 }
 
 header a {
@@ -42,6 +43,7 @@ nav button:hover {
     width: 1.5vw;
     top: 39.5%;
     right: 25.6%;
+    transition: transform 1s ease;
 }
 
 footer {
@@ -107,4 +109,51 @@ footer {
     height: 5vw;
     margin-top: 0.4vw;
     margin-right: 2.5vw;
+}
+
+.menu-deroulant {
+    z-index: 2;
+    position: fixed;
+    width: 16vw;
+    height: 20vw;
+    left: 60.5vw;
+    top: -20.5vw;
+    border: solid rgb(29, 147, 113) 3px;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245, 0.9);
+    transition: transform 1s ease;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+}
+
+.countryslot {
+    border-bottom: solid rgb(29, 147, 113) 3px;
+    width: 13vw;
+    height: 5vw;
+    margin: auto ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#openicon2 {
+    position: absolute;
+    width: 2.2vw;
+    left: 10.5vw;
+    margin-top: 1.2vw;
+    transform: rotate(-90deg);
+}
+
+#countryname {
+    color: rgb(29, 147, 113);
+    font-size: 1.25vw;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+#countryname:hover{
+    color: rgb(14, 199, 146);
 }
