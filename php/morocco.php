@@ -20,7 +20,8 @@
 
         <main>
             <div id="bgvideo">
-                <iframe id="videasPlayer" src="https://app.videas.fr/embed/media/b5ff3975-6527-4079-8872-df1e34f068b4/?autoplay=1&loop=1&muted=1&background=1" frameborder="0"></iframe>
+                <iframe id="videasPlayer" src="https://app.videas.fr/embed/media/b5ff3975-6527-4079-8872-df1e34f068b4/?autoplay=1&loop=1&muted=1&controls=0" frameborder="0"></iframe>
+                <div class="hidecursor"></div>
             </div>
 
             <div class="welcome">
