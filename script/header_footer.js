@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (scrollpos > lastscrollpos) {
             header.style.transform = "translateY(-100%)"
             if (isopened === 1) {
-                menuderoulant.style.transform = "translateY(21vw)"
+                menuderoulant.style.transform = "translateY(46.7vw)"
             }
         }
         else
         {
             header.style.transform = "translateY(0%)"
             if (isopened === 1) {
-            menuderoulant.style.transform = "translateY(26.7vw)"
+            menuderoulant.style.transform = "translateY(46.7vw)"
             }
         }
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btncountries.addEventListener("click", () => {
         if (isopened === 0) {
-            menuderoulant.style.transform = "translateY(26.7vw)"
+            menuderoulant.style.transform = "translateY(46.7vw)"
             openicon.style.transform = "rotate(180deg)"
             isopened = 1
         }
