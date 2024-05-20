@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="../style/france.css">
 
         <script type="text/javascript" src="/script/header_footer.js"></script>
-        <script type="text/javascript" src="/script/france.js"></script>
+        <script type="text/javascript" src="/script/country.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,22 +21,21 @@
         </header>
 
         <main>
-            <video id="bgvideo" autoplay loop muted>
-                <source src="../source/paris.mp4" type="video/mp4">
-            </video>
-    
-            <button id="controlButton">&#9658;</button> <!-- Bouton Play/Pause -->
+            <div id="bgvideo">
+                <iframe id="vimeoPlayer" src="https://app.videas.fr/embed/media/3ecac973-95c2-4881-a757-7ba481d4559e/?autoplay=1&loop=1&muted=1&background=1" frameborder="0"></iframe>
+            </div>
+
 
             <div class="welcome">
-                <h3>Your travel in France begins here !</h3>
+                <h3>Your journey in France begins here !</h3>
             </div>
 
             <div class="descript">
                     <div class="descriptxt">
-                        <h3>French History</h3>
+                        <h3>History of France</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum illum, quisquam soluta cumque quasi, doloremque vel laborum eligendi assumenda commodi alias officia placeat magni perferendis quas molestiae necessitatibus. <br><br>Voluptate, tempore?</p>
                     </div>
-                    <img id="frguy" src="../source/frenchguy.png" alt="frenchguy">
+                    <img id="countryico" src="../source/frenchguy.png" alt="countryico">
             </div>
 
             <div class="blogzone">
@@ -57,14 +56,14 @@
                     </div>
                 </div>
 
-                <h3 id="ratetxt">Rate my experience : </h3>
+                <h3 id="ratetxt">Rate your experience in France : </h3>
 
                 <div class="rating">
-                        <div class="starborder"><div class="star"></div><div class="yellowrect one"  ></div></div>
-                        <div class="starborder"><div class="star"></div><div class="yellowrect two"  ></div></div>
-                        <div class="starborder"><div class="star"></div><div class="yellowrect three"></div></div>
-                        <div class="starborder"><div class="star"></div><div class="yellowrect four" ></div></div>
-                        <div class="starborder"><div class="star"></div><div class="yellowrect five" ></div></div>
+                        <div class="starborder"><div class="star one"><div class="yellowrect" id="one"></div></div></div>
+                        <div class="starborder"><div class="star two"><div class="yellowrect" id="two"></div></div></div>
+                        <div class="starborder"><div class="star three"><div class="yellowrect" id="three"></div></div></div>
+                        <div class="starborder"><div class="star four"><div class="yellowrect" id="four"></div></div></div>
+                        <div class="starborder"><div class="star five"><div class="yellowrect" id="five"></div></div></div>
                 </div>
             </div>
         </main>   

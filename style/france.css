@@ -1,6 +1,5 @@
-#bgvideo{
-    height: 100vh;
-    width: 100vw;
+#bgvideo {
+    position: relative;
     object-fit: cover;
     position: fixed;
     left: 0;
@@ -10,26 +9,12 @@
     z-index: 0;
 }
 
-#controlButton{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-    background: rgb(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-    transition: opacity 1s ease;
-    z-index: 1;
-}
-
-#controlButton:focus{
-    outline: none;
+#vimeoPlayer {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 106%;
 }
 
 .welcome{
@@ -82,7 +67,7 @@
     font-size: 0.9vw;
 }
 
-#frguy {
+#countryico {
     position: relative;
     height: 23vw;
     top: 2.1vw;
@@ -98,6 +83,7 @@
     margin-top: 35vw;
     background-color: whitesmoke;
     text-align: center;
+    margin-bottom: 20vw;
 }
 
 #hubtitle{
@@ -140,7 +126,7 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 6vw;
-    margin-left: 6vw;
+    margin-left: 15vw;
 }
 
 .star {
@@ -151,6 +137,7 @@
     top: 0.5vw;
     left: 0.5vw;
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
 .starborder {
@@ -164,14 +151,15 @@
     position: absolute;
     width: 6vw;
     height: 6vw;
-    background-color: yellow;
-    right: 0vw;
+    background-color: rgb(254, 206, 0);
+    right: 6vw;
+    transition: transform 0.5s ease;
 }
 
 #ratetxt {
     position: absolute;
     top: 50vw;
-    left: 18vw;
+    left: 15vw;
     font-size: 1.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
