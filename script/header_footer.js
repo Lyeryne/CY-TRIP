@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btncountries.addEventListener("click", () => {
         if (isopened === 0) {
+            menuderoulant.style.display = "flex"
             menuderoulant.style.transform = "translateY(26.7vw)"
             openicon.style.transform = "rotate(180deg)"
             isopened = 1
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         else {
             menuderoulant.style.transform = "translateY(0)"
             openicon.style.transform = "rotate(0)"
+            menuderoulant.style.display = "none"
             isopened = 0
         }
     })

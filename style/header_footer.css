@@ -125,6 +125,7 @@ footer {
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+    display: none;
 }
 
 .countryslot {
