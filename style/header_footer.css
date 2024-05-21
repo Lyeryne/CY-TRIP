@@ -118,8 +118,8 @@ footer {
     height: 20vw;
     left: 60.5vw;
     top: -40.5vw;
-    border: solid rgb(29, 147, 113) 3px;
-    border-radius: 15px;
+    border: solid rgb(29, 147, 113) 0.2vw;
+    border-radius: 0.7vw;
     background-color: rgb(245, 245, 245, 0.9);
     transition: transform 1s ease;
     overflow-y: scroll;
@@ -128,7 +128,7 @@ footer {
 }
 
 .countryslot {
-    border-bottom: solid rgb(29, 147, 113) 3px;
+    border-bottom: solid rgb(29, 147, 113) 0.2vw;
     width: 13vw;
     height: 5vw;
     margin: auto ;

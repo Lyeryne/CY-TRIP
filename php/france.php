@@ -42,15 +42,56 @@
                 <div class="hub">
                     <div class="section spots">
                         <h3>Spots</h3>
+                        <form action="france.php" method="post">
+                            <div class="blog" id="spots">
+                                <div class="arraycoms" id="arrayspots">
+                                    
+                                    <div class="onecom">
+                                        <span id="who">
+                                            Monpseudoloooooooooong :
+                                        </span>
+                                        <span id="com">
+                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="onecom">
+                                        <span id="who">
+                                            adam :
+                                        </span>
+                                        <span id="com">
+                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
 
+                            <input class="txtblog" id="txtspots" type="text" name="comspots">
+                            <button type="submit" class="btnblog" id="btnspots" >Send</button>
+                        </form>
                     </div>
                     <div class="section dishes">
                         <h3>Dishes</h3>
+                        <form action="france.php" method="post">
+                            <div class="blog" id="dishes">
+                                
+                            </div>
 
+                            <input class="txtblog" id="txtdishes" type="text">
+                            <button type="submit" class="btnblog" id="btndishes" >Send</button>
+                        </form>
                     </div>
                     <div class="section activities">
                         <h3>Activities</h3>
+                        <form action="france.php" method="post">
+                            <div class="blog" id="activities">
+                                
+                            </div>
 
+                            <input class="txtblog" id="txtactivities" type="text">
+                            <button type="submit" class="btnblog" id="btnactivities" >Send</button>
+                        </form>
                     </div>
                 </div>
 
