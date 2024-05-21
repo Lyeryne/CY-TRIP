@@ -18,7 +18,7 @@
         <?php require_once(__DIR__."/php/header.php") ?> 
 
         <main>
-            <div class="map">
+            <div class="map"> 
                 <img id="worldmap" src="/source/worldmap.jpg" alt="worldmap">
 
                 <a href="/php/france.php">
