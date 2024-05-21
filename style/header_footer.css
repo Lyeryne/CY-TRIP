@@ -125,18 +125,20 @@ footer {
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+    padding-bottom: 0.5vw;
 }
 
 .countryslot {
     border-bottom: solid rgb(29, 147, 113) 0.2vw;
     width: 13vw;
     height: 5vw;
-    margin: auto ;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+    position: relative;
 }
 
 #openicon2 {

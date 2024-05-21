@@ -9,7 +9,7 @@
         <button id="btnsignin">Sign up</button>
 
         <!-- if logged 
-        <button id="btnsignup">Sign out</button>
+        <button id="btnmyprofile">My profile</button>
         -->
     </nav>
 </header>

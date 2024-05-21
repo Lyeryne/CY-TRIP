@@ -70,4 +70,51 @@ document.addEventListener("DOMContentLoaded", () => {
     starone.addEventListener("mouseout", () => {
         rectone.style.transform = "translateX(0)"
     })
+
+
+    const btnsizespots = document.querySelector(".sizespots")
+    const btnsizedishes = document.querySelector(".sizedishes")
+    const btnsizeactivities = document.querySelector(".sizeactivities")
+
+    const txtspots = document.querySelector("#txtspots")
+    const txtdishes = document.querySelector("#txtdishes")
+    const txtactivities = document.querySelector("#txtactivities")
+
+    txtspots.style.height = "2.5vw"
+    txtdishes.style.height = "2.5vw"
+    txtactivities.style.height = "2.5vw"
+
+
+    btnsizespots.addEventListener("click", () => {
+        if (txtspots.style.height === "2.5vw") {
+            txtspots.style.height = "10vw"
+            btnsizespots.style.transform = "rotate(180deg)"
+        }
+        else {
+            txtspots.style.height = "2.5vw"
+            btnsizespots.style.transform = "rotate(0deg)"
+        }
+    })
+
+    btnsizedishes.addEventListener("click", () => {
+        if (txtdishes.style.height === "2.5vw") {
+            txtdishes.style.height = "10vw"
+            btnsizedishes.style.transform = "rotate(180deg)"
+        }
+        else {
+            txtdishes.style.height = "2.5vw"
+            btnsizedishes.style.transform = "rotate(0deg)"
+        }
+    })
+
+    btnsizeactivities.addEventListener("click", () => {
+        if (txtactivities.style.height === "2.5vw") {
+            txtactivities.style.height = "10vw"
+            btnsizeactivities.style.transform = "rotate(180deg)"
+        }
+        else {
+            txtactivities.style.height = "2.5vw"
+            btnsizeactivities.style.transform = "rotate(0deg)"
+        }
+    })
 })

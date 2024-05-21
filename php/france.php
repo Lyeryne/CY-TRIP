@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <?php require_once(__DIR__."/header.php") ?>    
+        <?php include('./header.php') ?> 
 
         <main>
             <div id="bgvideo">
@@ -45,27 +45,28 @@
                         <form action="france.php" method="post">
                             <div class="blog" id="spots">
                                     
-                                    <?php if (isset($_POST['comspotsvalue'])) :
-                                            foreach ($_POST as $com) : 
-                                            //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                            $username = "superuser"; // $_POST['username'];
-                                    ?>
-                                     
-                                     <div class="onecom">
-                                        <span id="who">
-                                            <?php echo $username." : "; ?>
-                                        </span>
-                                        <span id="com">
-                                            <?php echo $com; ?>
-                                        </span>
-                                    </div>
+                                <?php if (isset($_POST['comspotsvalue'])) :
+                                        foreach ($_POST as $com) : 
+                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                        $username = "superuser"; // $_POST['username'];
+                                ?>
+                                 
+                                 <div class="onecom">
+                                    <span id="who">
+                                        <?php echo $username." : "; ?>
+                                    </span>
+                                    <span id="com">
+                                        <?php echo $com; ?>
+                                    </span>
+                                </div>
 
-                                        <?php endforeach ?>
-                                    <?php endif ?>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+
                             </div>
 
                             <textarea class="txtblog" id="txtspots" type="text" name="comspotsvalue"></textarea>
-                            <button id="btnsize"><img src="../source/openicon.png" alt="openicon"></button>
+                            <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
                     </div>
@@ -74,10 +75,29 @@
                         <h3>Dishes</h3>
                         <form action="france.php" method="post">
                             <div class="blog" id="dishes">
+
+                                <?php if (isset($_POST['comdishesvalue'])) :
+                                        foreach ($_POST as $com) : 
+                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                        $username = "superuser"; // $_POST['username'];
+                                ?>
+                                 
+                                 <div class="onecom">
+                                    <span id="who">
+                                        <?php echo $username." : "; ?>
+                                    </span>
+                                    <span id="com">
+                                        <?php echo $com; ?>
+                                    </span>
+                                </div>
+                                
+                                    <?php endforeach ?>
+                                <?php endif ?>
                                 
                             </div>
 
-                            <input class="txtblog" id="txtdishes" type="text">
+                            <textarea class="txtblog" id="txtdishes" type="text" name="comdishesvalue"></textarea>
+                            <div class="btnsize sizedishes"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btndishes" >Send</button>
                         </form>
                     </div>
@@ -86,10 +106,29 @@
                         <h3>Activities</h3>
                         <form action="france.php" method="post">
                             <div class="blog" id="activities">
+
+                                <?php if (isset($_POST['comactivitiesvalue'])) :
+                                        foreach ($_POST as $com) : 
+                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                        $username = "superuser"; // $_POST['username'];
+                                ?>
+                                 
+                                 <div class="onecom">
+                                    <span id="who">
+                                        <?php echo $username." : "; ?>
+                                    </span>
+                                    <span id="com">
+                                        <?php echo $com; ?>
+                                    </span>
+                                </div>
+                                
+                                    <?php endforeach ?>
+                                <?php endif ?>
                                 
                             </div>
 
-                            <input class="txtblog" id="txtactivities" type="text">
+                            <textarea class="txtblog" id="txtactivities" type="text" name="comactivitiesvalue"></textarea>
+                            <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnactivities" >Send</button>
                         </form>
                     </div>
@@ -107,8 +146,6 @@
             </div>
         </main>   
         
-        <footer>
-            <?php require_once(__DIR__."/footer.php") ?> 
-        </footer>
+        <?php include('./footer.php') ?> 
     </body>
 </html>

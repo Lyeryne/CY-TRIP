@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <?php require_once(__DIR__ . "/header.php") ?>
+    <?php include('./header.php') ?> 
 
     <main>
         <div id="bgvideo">
@@ -42,34 +42,99 @@
             <h3 id="hubtitle">The Hub</h3>
 
             <div class="hub">
-                <div class="section spots">
-                    <h3>Spots</h3>
-                    <form method="POST" action="submit_form_spots.php" enctype="multipart/form-data">
-                        <!-- Ajout des champs email et message -->
-                        <!-- [...] -->
-                        <!-- Ajout champ d'upload ! -->
-                        <!-- <div class="mb-3">
-                            <label for="screenshot" class="form-label">Votre capture d'écran</label>
-                            <input type="file" class="form-control" id="screenshot" name="screenshot" />
-                        </div>
-                        Fin ajout du champ -->
-                        <!--<button type="submit" class="btn btn-primary">Envoyer</button> -->
-                    </form>
+                    <div class="section spots">
+                        <h3>Spots</h3>
+                        <form action="morocco.php" method="post">
+                            <div class="blog" id="spots">
+                                    
+                                <?php if (isset($_POST['comspotsvalue'])) :
+                                        foreach ($_POST as $com) : 
+                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                        $username = "superuser"; // $_POST['username'];
+                                ?>
+                                 
+                                 <div class="onecom">
+                                    <span id="who">
+                                        <?php echo $username." : "; ?>
+                                    </span>
+                                    <span id="com">
+                                        <?php echo $com; ?>
+                                    </span>
+                                </div>
 
+                                    <?php endforeach ?>
+                                <?php endif ?>
 
+                            </div>
+
+                            <textarea class="txtblog" id="txtspots" type="text" name="comspotsvalue"></textarea>
+                            <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
+                            <button type="submit" class="btnblog" id="btnspots" >Send</button>
+                        </form>
+                    </div>
+
+                    <div class="section dishes">
+                        <h3>Dishes</h3>
+                        <form action="morocco.php" method="post">
+                            <div class="blog" id="dishes">
+
+                                <?php if (isset($_POST['comdishesvalue'])) :
+                                        foreach ($_POST as $com) : 
+                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                        $username = "superuser"; // $_POST['username'];
+                                ?>
+                                 
+                                 <div class="onecom">
+                                    <span id="who">
+                                        <?php echo $username." : "; ?>
+                                    </span>
+                                    <span id="com">
+                                        <?php echo $com; ?>
+                                    </span>
+                                </div>
+                                
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                                
+                            </div>
+
+                            <textarea class="txtblog" id="txtdishes" type="text" name="comdishesvalue"></textarea>
+                            <div class="btnsize sizedishes"><img src="../source/openicon.png" alt="openicon"></div>
+                            <button type="submit" class="btnblog" id="btndishes" >Send</button>
+                        </form>
+                    </div>
+                    
+                    <div class="section activities">
+                        <h3>Activities</h3>
+                        <form action="morocco.php" method="post">
+                            <div class="blog" id="activities">
+
+                                <?php if (isset($_POST['comactivitiesvalue'])) :
+                                        foreach ($_POST as $com) : 
+                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                        $username = "superuser"; // $_POST['username'];
+                                ?>
+                                 
+                                 <div class="onecom">
+                                    <span id="who">
+                                        <?php echo $username." : "; ?>
+                                    </span>
+                                    <span id="com">
+                                        <?php echo $com; ?>
+                                    </span>
+                                </div>
+                                
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                                
+                            </div>
+
+                            <textarea class="txtblog" id="txtactivities" type="text" name="comactivitiesvalue"></textarea>
+                            <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
+                            <button type="submit" class="btnblog" id="btnactivities" >Send</button>
+                        </form>
+                    </div>
                 </div>
-                <div class=" section dishes">
-                    <h3>Dishes</h3>
-                    <form method="POST" action="submit_form_dishes.php" enctype="multipart/form-data"></form>
-
-
-                </div>
-                <div class=" section activities">
-                    <h3>Activities</h3>
-                    <form method="POST" action="submit_form_activities.php" enctype="multipart/form-data"></form>
-
-                </div>
-            </div>
 
             <h3 id="ratetxt">Rate your experience in Morocco : </h3>
 
@@ -103,9 +168,7 @@
         </div>
     </main>
 
-    <footer>
-        <?php require_once(__DIR__ . "/footer.php") ?>
-    </footer>
+    <?php include('./footer.php') ?> 
 </body>
 
 </html>

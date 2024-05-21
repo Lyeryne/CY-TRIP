@@ -131,7 +131,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 .blog {
     position: absolute;
     border-radius: 0.7vw;
@@ -151,6 +150,7 @@
 .txtblog {
     position: absolute;
     border-radius: 0.7vw;
+    font-size: 0.7vw;
     top: 85%;
     right: 22.5%;
     width: 18vw;
@@ -163,24 +163,33 @@
     background-color: white;
     overflow-wrap: break-word;
     resize: none;
+    transition: height 1s ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);    
 }
 
-#btnsize img{
-    width: 2vw;
-}
-
-#btnsize {
+.btnsize img{
     width: 1.5vw;
-    height: 1vw;
+}
+
+.btnsize {
+    position: absolute;
+    top: 95%;
+    left: 79%;
+    width: 1.2vw;
+    height: 0.8vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    background-color: whitesmoke;
+    transition: transform 1s ease;
 }
 
 .btnblog {
     position: absolute;
-    top: 87%;
+    top: 85%;
     right: 3%;
     border-radius: 0.7vw;
     background-color: rgb(29, 147, 113, 0.6);
@@ -246,7 +255,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 6vw;
+    margin-top: 7vw;
     margin-left: 15vw;
 }
 
@@ -279,7 +288,7 @@
 
 #ratetxt {
     position: absolute;
-    top: 50vw;
+    top: 51vw;
     left: 15vw;
     font-size: 1.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

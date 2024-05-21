@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <?php require_once(__DIR__."/php/header.php") ?> 
+        <?php include('./php/header.php') ?> 
 
         <main>
             <div class="map"> 
@@ -83,8 +83,6 @@
             </div>
         </main>
 
-        <footer>
-            <?php require_once(__DIR__."/php/footer.php") ?> 
-        </footer>
+            <?php include('./php/footer.php') ?> 
     </body>
 </html>

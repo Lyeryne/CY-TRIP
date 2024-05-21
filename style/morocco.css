@@ -132,11 +132,131 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.blog {
+    position: absolute;
+    border-radius: 0.7vw;
+    top: 20%;
+    right: 4.5%;
+    width: 25vw;
+    height: 18vw;
+    border: solid black 0.2vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+}
+
+.txtblog {
+    position: absolute;
+    border-radius: 0.7vw;
+    font-size: 0.7vw;
+    top: 85%;
+    right: 22.5%;
+    width: 18vw;
+    height: 2.5vw;
+    border: solid black 0.2vw;
+    padding-left: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    padding-right: 1vw;
+    background-color: white;
+    overflow-wrap: break-word;
+    resize: none;
+    transition: height 1s ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);    
+}
+
+.btnsize img{
+    width: 1.5vw;
+}
+
+.btnsize {
+    position: absolute;
+    top: 95%;
+    left: 79%;
+    width: 1.2vw;
+    height: 0.8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: whitesmoke;
+    transition: transform 1s ease;
+}
+
+.btnblog {
+    position: absolute;
+    top: 85%;
+    right: 3%;
+    border-radius: 0.7vw;
+    background-color: rgb(29, 147, 113, 0.6);
+    border: none;
+    width: 5vw;
+    height: 2.5vw;
+    font-weight: 700;
+    font-size: 1.1vw;
+    color: whitesmoke;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnblog:hover {
+    background-color: rgb(29, 147, 113);
+}
+
+.arraycoms {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 2%;
+    min-height: 25%;
+    height: fit-content;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 0.5vw;
+}
+
+.onecom {
+    position: relative;
+    display: flex;
+    height: fit-content;
+    left: 4%;
+    width: 92%;
+    flex-direction: row;
+    border-bottom: solid black 0.2vw;
+    margin-bottom: 0.8vw;
+}
+
+#com {
+    width: 15vw;
+    margin-top: 0.5vw;
+    font-weight: 450;
+    overflow-wrap: break-word;
+    margin-bottom: 0.5vw;
+    font-size: 0.9vw;
+}
+
+#who {
+    width: 7vw;
+    height: auto;
+    margin-top: 0.5vw;
+    margin-right: 0.5vw;
+    font-weight: 450;
+    overflow-wrap: break-word;
+    margin-bottom: 0.5vw;
+    font-size: 0.9vw;
+}
+
 .rating {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 6vw;
+    margin-top: 7vw;
     margin-left: 19vw;
 }
 
@@ -169,7 +289,7 @@
 
 #ratetxt {
     position: absolute;
-    top: 50vw;
+    top: 51vw;
     left: 15vw;
     font-size: 1.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
