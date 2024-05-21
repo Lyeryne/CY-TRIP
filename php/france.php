@@ -45,48 +45,31 @@
                         <form action="france.php" method="post">
                             <div class="blog" id="spots">
                                     
-                                    <div class="onecom">
+                                    <?php if (isset($_POST['comspotsvalue'])) :
+                                            foreach ($_POST as $com) : 
+                                            //imaginons que le pseudo est récup en post puisque l'user est connecté
+                                            $username = "superuser"; // $_POST['username'];
+                                    ?>
+                                     
+                                     <div class="onecom">
                                         <span id="who">
-                                            Monpseudoloooooooooong :
+                                            <?php echo $username." : "; ?>
                                         </span>
                                         <span id="com">
-                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="onecom">
-                                        <span id="who">
-                                            adam :
-                                        </span>
-                                        <span id="com">
-                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
+                                            <?php echo $com; ?>
                                         </span>
                                     </div>
 
-                                    <div class="onecom">
-                                        <span id="who">
-                                            lepoulet :
-                                        </span>
-                                        <span id="com">
-                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
-                                        </span>
-                                    </div>
-
-                                    <div class="onecom">
-                                        <span id="who">
-                                            lala :
-                                        </span>
-                                        <span id="com">
-                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
-                                        </span>
-                                    </div>
-
+                                        <?php endforeach ?>
+                                    <?php endif ?>
                             </div>
 
-                            <input class="txtblog" id="txtspots" type="text" name="comspots">
+                            <textarea class="txtblog" id="txtspots" type="text" name="comspotsvalue"></textarea>
+                            <button id="btnsize"><img src="../source/openicon.png" alt="openicon"></button>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
                     </div>
+
                     <div class="section dishes">
                         <h3>Dishes</h3>
                         <form action="france.php" method="post">
@@ -98,6 +81,7 @@
                             <button type="submit" class="btnblog" id="btndishes" >Send</button>
                         </form>
                     </div>
+                    
                     <div class="section activities">
                         <h3>Activities</h3>
                         <form action="france.php" method="post">

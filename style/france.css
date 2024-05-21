@@ -146,7 +146,6 @@
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
-    padding-bottom: ;
 }
 
 .txtblog {
@@ -158,13 +157,30 @@
     height: 2.5vw;
     border: solid black 0.2vw;
     padding-left: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
     padding-right: 1vw;
     background-color: white;
+    overflow-wrap: break-word;
+    resize: none;
+}
+
+#btnsize img{
+    width: 2vw;
+}
+
+#btnsize {
+    width: 1.5vw;
+    height: 1vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btnblog {
     position: absolute;
-    top: 85.5%;
+    top: 87%;
     right: 3%;
     border-radius: 0.7vw;
     background-color: rgb(29, 147, 113, 0.6);
