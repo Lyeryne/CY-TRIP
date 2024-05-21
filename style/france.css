@@ -146,6 +146,7 @@
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+    padding-bottom: ;
 }
 
 .txtblog {
@@ -183,10 +184,9 @@
 
 .arraycoms {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     position: relative;
     left: 2%;
-    width: 92%;
     min-height: 25%;
     height: fit-content;
     text-align: left;
@@ -198,8 +198,12 @@
 .onecom {
     position: relative;
     display: flex;
+    height: fit-content;
+    left: 4%;
+    width: 92%;
     flex-direction: row;
     border-bottom: solid black 0.2vw;
+    margin-bottom: 0.8vw;
 }
 
 #com {

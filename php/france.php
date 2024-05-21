@@ -44,7 +44,6 @@
                         <h3>Spots</h3>
                         <form action="france.php" method="post">
                             <div class="blog" id="spots">
-                                <div class="arraycoms" id="arrayspots">
                                     
                                     <div class="onecom">
                                         <span id="who">
@@ -60,11 +59,28 @@
                                             adam :
                                         </span>
                                         <span id="com">
+                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
+                                        </span>
+                                    </div>
+
+                                    <div class="onecom">
+                                        <span id="who">
+                                            lepoulet :
+                                        </span>
+                                        <span id="com">
                                             HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
                                         </span>
                                     </div>
-                                    
-                                </div>
+
+                                    <div class="onecom">
+                                        <span id="who">
+                                            lala :
+                                        </span>
+                                        <span id="com">
+                                            HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld ! HelloWorld !
+                                        </span>
+                                    </div>
+
                             </div>
 
                             <input class="txtblog" id="txtspots" type="text" name="comspots">
