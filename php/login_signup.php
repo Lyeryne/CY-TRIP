@@ -18,10 +18,10 @@
         <?php require_once(__DIR__."/header.php") ?> 
 
         <main>
-            <!-- <video autoplay loop muted id="bgvideo"> -->
-                <!-- <source src="../source/travel.mp4"> -->
-            <!-- </video> -->
-            <!-- <div id="playpausebtn"><span>&#9658;</span></div> -->
+            <video autoplay loop muted id="bgvideo">
+                <source src="../source/travel.mp4">
+            </video>
+            <div id="playpausebtn"><span>&#9658;</span></div>
             
             <div class="container" id="container">
                 <div class="form-container sign-up">
