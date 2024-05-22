@@ -1,15 +1,13 @@
 <header>
-
     <a href="/index.php"><img id="logoheader" src="../source/icon.png" alt="icon"></a>
 
     <nav>
         <button id="btncountries">Countries <img id="openicon" src="../source/openicon.png" alt="openicon"></button>
         <!-- if not logged -->
-        <button id="btnlogin">Log in</button>
-        <button id="btnsignin">Sign up</button>
+        <a href="/php/login_signup.php">Log in / Sign up</a>
 
         <!-- if logged 
-        <button id="btnmyprofile">My profile</button>
+        <a id="btnmyprofile">My profile</a>
         -->
     </nav>
 </header>

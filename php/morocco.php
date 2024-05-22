@@ -18,7 +18,8 @@
 </head>
 
 <body>
-    <?php include('./header.php') ?> 
+    <?php require_once(__DIR__."/header.php") ?> 
+ 
 
     <main>
         <video autoplay loop muted id="bgvideo">
@@ -168,7 +169,7 @@
         </div>
     </main>
 
-    <?php include('./footer.php') ?> 
+    <?php require_once(__DIR__."/footer.php") ?> 
 </body>
 
 </html>

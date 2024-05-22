@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="/style/style.css">
         <link rel="stylesheet" type="text/css" href="/style/header_footer.css">
         <link rel="stylesheet" type="text/css" href="/style/map.css">
+
         <script type="text/javascript" src="/script/map.js"></script>
         <script type="text/javascript" src="/script/header_footer.js"></script>
 
@@ -15,7 +18,7 @@
     </head>
 
     <body>
-        <?php include('./php/header.php') ?> 
+        <?php require_once(__DIR__."/php/header.php") ?> 
 
         <main>
             <div class="map"> 
@@ -83,6 +86,6 @@
             </div>
         </main>
 
-            <?php include('./php/footer.php') ?> 
+        <?php require_once(__DIR__."/php/footer.php") ?> 
     </body>
 </html>

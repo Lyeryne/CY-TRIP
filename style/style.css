@@ -13,4 +13,5 @@ body {
 main {
     position: relative;
     top: 5.8vw;
+    min-height: 100vh;
 }
