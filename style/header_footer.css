@@ -50,9 +50,8 @@ footer {
     background-color: whitesmoke;
     z-index: 2;
     width: 100%;
-    position: relative;
-    top: 5.8vw;
-    height: 5.8vw;
+    position: absolute;
+    top: 100%;
     border-top: solid rgb(29, 147, 113) 3px;
     display: flex;
     flex-direction: row;

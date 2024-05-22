@@ -21,10 +21,10 @@
     <?php include('./header.php') ?> 
 
     <main>
-        <div id="bgvideo">
-            <iframe src="https://app.videas.fr/embed/media/b5ff3975-6527-4079-8872-df1e34f068b4/?autoplay=1&loop=1&muted=1&controls=0" frameborder="0"></iframe>
-            <div class="hidecursor"></div>
-        </div>
+        <video autoplay loop muted id="bgvideo">
+                <source src="../source/morroco.mp4">
+            </video>
+            <div id="playpausebtn"><span>&#9658;</span></div>
 
         <div class="welcome">
             <h3>Your journey in Morocco begins here !</h3>

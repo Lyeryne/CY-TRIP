@@ -21,10 +21,10 @@
     <?php include('./header.php') ?> 
 
     <main>
-        <div id="bgvideo">
-            <iframe src="https://app.videas.fr/embed/media/45c2627b-8197-48f6-b579-32da9a18ff91/?autoplay=1&loop=1&muted=1&controls=0" frameborder="0"></iframe>
-            <div class="hidecursor"></div>
-        </div>
+            <video autoplay loop muted id="bgvideo">
+                <source src="../source/spain.mp4">
+            </video>
+            <div id="playpausebtn"><span>&#9658;</span></div>
 
         <div class="welcome">
             <h3>Your journey in Spain begins here !</h3>
