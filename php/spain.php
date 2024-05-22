@@ -22,7 +22,7 @@
 
     <main>
         <div id="bgvideo">
-            <iframe id="videasPlayer" src="https://app.videas.fr/embed/media/45c2627b-8197-48f6-b579-32da9a18ff91/?autoplay=1&loop=1&muted=1&controls=0" frameborder="0"></iframe>
+            <iframe src="https://app.videas.fr/embed/media/45c2627b-8197-48f6-b579-32da9a18ff91/?autoplay=1&loop=1&muted=1&controls=0" frameborder="0"></iframe>
             <div class="hidecursor"></div>
         </div>
 
