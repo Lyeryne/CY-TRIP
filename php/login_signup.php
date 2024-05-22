@@ -25,12 +25,12 @@
             
             <div class="container" id="container">
                 <div class="form-container sign-up">
-                    <form action="login_signup.php" method="post"> <!-- Signup -->
+                    <form action="login_signup.php" method="post"> <!-- Signup à rediriger pour check les supervariables dans post regex mail etc -->
                         <h1>Create Account</h1>
                         <span>use your email, username and password to register</span>
-                        <input type="text" placeholder="Username" name="username">
-                        <input type="email" placeholder="Email" name="email">
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="text" placeholder="Username" name="user_name" maxlength="19">
+                        <input type="email" placeholder="Email" name="user_email">
+                        <input type="password" placeholder="Password" name="user_password">
                         <button type="submit">Sign Up</button>
                     </form>
                 </div>
@@ -39,8 +39,8 @@
                     <form action="login_signup.php" method="post"> <!-- Login -->
                         <h1>Log In</h1>
                         <span>use your email and password to connect</span>
-                        <input type="email" placeholder="Email" name="email">
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="email" placeholder="Email" name="user_email">
+                        <input type="password" placeholder="Password" name="user_password">
                         <button type="submit">Log In</button>
                     </form>
                 </div>
@@ -48,14 +48,14 @@
                 <div class="toggle-container">
                     <div class="toggle">
                         <div class="toggle-panel toggle-left">
-                            <h1>Welcome back !</h1>
-                            <p>Enter your personal details to use all of site features</p>
+                            <h1>Hello, friend !</h1>
+                            <p>Register with your personal details to use all of site features</p>
                             <button class="hidden" id="login">Log In</button>
                         </div>
 
                         <div class="toggle-panel toggle-right">
-                            <h1>Hello, friend !</h1>
-                            <p>Register with your personal details to use all of site features</p>
+                            <h1>Welcome back !</h1>
+                            <p>Enter your personal details to use all of site features</p>
                             <button class="hidden" id="register">Sign Up</button>
                         </div>
                     </div>

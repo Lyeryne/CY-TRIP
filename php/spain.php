@@ -50,12 +50,12 @@
                                 <?php if (isset($_POST['comspotsvalue'])) :
                                         foreach ($_POST as $com) : 
                                         //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $username = "superuser"; // $_POST['username'];
+                                        $user_name = "superuser"; // $_POST['user_name'];
                                 ?>
                                  
                                  <div class="onecom">
                                     <span id="who">
-                                        <?php echo $username." : "; ?>
+                                        <?php echo $user_name." : "; ?>
                                     </span>
                                     <span id="com">
                                         <?php echo $com; ?>
@@ -81,12 +81,12 @@
                                 <?php if (isset($_POST['comdishesvalue'])) :
                                         foreach ($_POST as $com) : 
                                         //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $username = "superuser"; // $_POST['username'];
+                                        $user_name = "superuser"; // $_POST['user_name'];
                                 ?>
                                  
                                  <div class="onecom">
                                     <span id="who">
-                                        <?php echo $username." : "; ?>
+                                        <?php echo $user_name." : "; ?>
                                     </span>
                                     <span id="com">
                                         <?php echo $com; ?>
@@ -112,12 +112,12 @@
                                 <?php if (isset($_POST['comactivitiesvalue'])) :
                                         foreach ($_POST as $com) : 
                                         //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $username = "superuser"; // $_POST['username'];
+                                        $user_name = "superuser"; // $_POST['user_name'];
                                 ?>
                                  
                                  <div class="onecom">
                                     <span id="who">
-                                        <?php echo $username." : "; ?>
+                                        <?php echo $user_name." : "; ?>
                                     </span>
                                     <span id="com">
                                         <?php echo $com; ?>
