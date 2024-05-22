@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <?php include('./header.php') ?> 
+        <?php require_once(__DIR__."/header.php") ?> 
 
         <main>
             <video autoplay loop muted id="bgvideo">
@@ -146,6 +146,6 @@
             </div>
         </main>   
         
-        <?php include('./footer.php') ?> 
+        <?php require_once(__DIR__."/footer.php") ?> 
     </body>
 </html>

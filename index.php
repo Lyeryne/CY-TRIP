@@ -24,65 +24,147 @@
             <div class="map"> 
                 <img id="worldmap" src="/source/worldmap.jpg" alt="worldmap">
 
-                <a href="/php/france.php">
-                    <div class="france">
-                        <div class="FR name">France</div>
-                    </div>
-                </a>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/france.php">
+                        <div class="france">
+                            <div class="FR name">France</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="france">
+                            <div class="FR name">France</div>
+                        </div>
+                    </a>
+                <?php endif ?>
 
-                <a href="/php/spain.php">
-                    <div class="spain">
-                        <div class="SP name">Spain</div>
-                    </div>
-                </a>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/spain.php">
+                        <div class="spain">
+                            <div class="SP name">Spain</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="spain">
+                            <div class="SP name">Spain</div>
+                        </div>
+                    </a>
+                <?php endif ?>
 
-                <a href="/php/japan.php">
-                    <div class="japan">
-                        <div class="JP name">Japan</div>
-                    </div>
-                </a>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/japan.php">
+                        <div class="japan">
+                            <div class="JP name">Japan</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="japan">
+                            <div class="JP name">Japan</div>
+                        </div>
+                    </a>
+                <?php endif ?>
 
-                <a href="/php/australia.php">
-                    <div class="australia">
-                        <div class="AU name">Australia</div>
-                    </div>
-                </a>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/australia.php">
+                        <div class="australia">
+                            <div class="AU name">Australia</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="australia">
+                            <div class="AU name">Australia</div>
+                        </div>
+                    </a>
+                <?php endif ?>
+                    
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/germany.php">
+                        <div class="germany">
+                            <div class="GE name">Germany</div>
+                        </div>
+                    </a>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="germany">
+                            <div class="GE name">Germany</div>
+                        </div>
+                    </a>
+                <?php endif ?>
+                    
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/morocco.php">
+                        <div class="morocco">
+                            <div class="MR name">Morocco</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="morocco">
+                            <div class="MR name">Morocco</div>
+                        </div>
+                    </a>
+                <?php endif ?>
+                    
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/usa.php">
+                        <div class="usa">
+                            <div class="USA name">USA</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="usa">
+                            <div class="USA name">USA</div>
+                        </div>
+                    </a>
+                <?php endif ?>
 
-                <a href="/php/germany.php">
-                    <div class="germany">
-                        <div class="GE name">Germany</div>
-                    </div>
-                </a>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/russia.php">
+                        <div class="russia">
+                            <div class="RU name">Russia</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="russia">
+                            <div class="RU name">Russia</div>
+                        </div>
+                    </a>
+                <?php endif ?>
+                    
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/brasil.php">
+                        <div class="brasil">
+                            <div class="BR name">Brasil</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="brasil">
+                            <div class="BR name">Brasil</div>
+                        </div>
+                    </a>
+                <?php endif ?>
+                    
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="/php/southafrica.php">
+                        <div class="southafrica">
+                            <div class="SA name">South<br>Africa</div>
+                        </div>
+                    </a>
+                <?php else : ?>
+                    <a href="/php/login_signup.php">
+                        <div class="southafrica">
+                            <div class="SA name">South<br>Africa</div>
+                        </div>
+                    </a>
+                <?php endif ?>
 
-                <a href="/php/morocco.php">
-                    <div class="morocco">
-                        <div class="MR name">Morocco</div>
-                    </div>
-                </a>
-
-                <a href="/php/usa.php">
-                    <div class="usa">
-                        <div class="USA name">USA</div>
-                    </div>
-                </a>
-
-                <a href="/php/russia.php">
-                    <div class="russia">
-                        <div class="RU name">Russia</div>
-                    </div>
-                </a>
-
-                <a href="/php/brasil.php">
-                    <div class="brasil">
-                        <div class="BR name">Brasil</div>
-                    </div>
-                </a>
-
-                <a href="/php/southafrica.php">
-                    <div class="southafrica">
-                        <div class="SA name">South<br>Africa</div>
-                    </div>
-                </a>
             </div>
         </main>
 
