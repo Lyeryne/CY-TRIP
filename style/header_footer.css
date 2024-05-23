@@ -58,6 +58,7 @@ nav button, nav a {
     border: none;
 }
 
+
 nav button:hover {
     color: rgb(14, 199, 146);
 }
@@ -124,7 +125,7 @@ footer {
     width: fit-content;
 }
 
-.names button {
+.names a {
     text-decoration: none;
     color: rgb(29, 147, 113);
     font-size: 0.8vw;
@@ -134,7 +135,7 @@ footer {
     border: none;
 }
 
-.names button:hover {
+.names a:hover {
     color: rgb(14, 199, 146);
 }
 
