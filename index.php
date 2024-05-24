@@ -1,8 +1,11 @@
-<?php session_start();?>
+<?php 
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Cy Trip</title>
         <link rel="icon" href="/source/main.png">
         <link rel="stylesheet" type="text/css" href="/style/style.css">
@@ -24,7 +27,7 @@
             <div class="map"> 
                 <img id="worldmap" src="/source/worldmap.jpg" alt="worldmap">
 
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/france.php">
                         <div class="france">
                             <div class="FR name">France</div>
@@ -38,7 +41,7 @@
                     </a>
                 <?php endif ?>
 
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/spain.php">
                         <div class="spain">
                             <div class="SP name">Spain</div>
@@ -52,7 +55,7 @@
                     </a>
                 <?php endif ?>
 
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/japan.php">
                         <div class="japan">
                             <div class="JP name">Japan</div>
@@ -66,7 +69,7 @@
                     </a>
                 <?php endif ?>
 
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/australia.php">
                         <div class="australia">
                             <div class="AU name">Australia</div>
@@ -80,7 +83,7 @@
                     </a>
                 <?php endif ?>
                     
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/germany.php">
                         <div class="germany">
                             <div class="GE name">Germany</div>
@@ -95,7 +98,7 @@
                     </a>
                 <?php endif ?>
                     
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/morocco.php">
                         <div class="morocco">
                             <div class="MR name">Morocco</div>
@@ -109,7 +112,7 @@
                     </a>
                 <?php endif ?>
                     
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/usa.php">
                         <div class="usa">
                             <div class="USA name">USA</div>
@@ -123,7 +126,7 @@
                     </a>
                 <?php endif ?>
 
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/russia.php">
                         <div class="russia">
                             <div class="RU name">Russia</div>
@@ -137,7 +140,7 @@
                     </a>
                 <?php endif ?>
                     
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/brasil.php">
                         <div class="brasil">
                             <div class="BR name">Brasil</div>
@@ -151,7 +154,7 @@
                     </a>
                 <?php endif ?>
                     
-                <?php if (isset($_SESSION["user_name"])) : ?>
+                <?php if (isset($_SESSION["user"])) : ?>
                     <a href="/php/southafrica.php">
                         <div class="southafrica">
                             <div class="SA name">South<br>Africa</div>

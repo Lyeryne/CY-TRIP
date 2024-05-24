@@ -1,10 +1,10 @@
 <header>
-    <a href="/index.php"><img id="logoheader" src="../source/icon.png" alt="icon"></a>
+    <a href="/index.php "><img id="logoheader" src="../source/icon.png" alt="icon"></a>
 
     <div id="bar"></div>
 
-    <?php if (isset($_SESSION['user_name'])) : ?>
-        <h2>Welcome <?php echo $_SESSION['user_name'] ?></h2>
+    <?php if (isset($_SESSION['user']['user_name'])) : ?>
+        <h2>Welcome <?php echo $_SESSION['user']['user_name'] ?></h2>
     <?php else :?>
         <h2>Log in to start travelling</h2>
     <?php endif?>
@@ -12,7 +12,7 @@
 
     <nav>
         <button id="btncountries">Countries <img id="openicon" src="../source/openicon.png" alt="openicon"></button>
-        <?php if (isset($_SESSION['user_name'])) : ?>
+        <?php if (isset($_SESSION['user']['user_name'])) : ?>
             <a href="/php/profile.php">Your profile</a>
         <?php else :?>
             <a href="/php/login_signup.php">Log in / Sign up</a>

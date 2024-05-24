@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +29,7 @@
             
             <div class="container" id="container">
                 <div class="form-container sign-up">
-                    <form action="login_signup.php" method="post"> <!-- Signup à rediriger pour check les supervariables dans post regex mail etc -->
+                    <form action="signup.php" method="post"> <!-- Signup à rediriger pour check les supervariables dans post regex mail etc -->
                         <h1>Create Account</h1>
                         <span>use your email, username and password to register</span>
                         <input type="text" placeholder="Username" name="user_name" maxlength="19">
@@ -36,7 +40,7 @@
                 </div>
 
                 <div class="form-container sign-in">
-                    <form action="login_signup.php" method="post"> <!-- Login -->
+                    <form action="login.php" method="post"> <!-- Login -->
                         <h1>Log In</h1>
                         <span>use your email and password to connect</span>
                         <input type="email" placeholder="Email" name="user_email">
