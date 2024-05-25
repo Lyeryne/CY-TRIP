@@ -25,6 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
         },700)
         }
     })
+
+    const editbtn = document.querySelector("#edit")
+    const validbtn = document.querySelector("#valid")
+    const pseudozone = document.querySelector(".pseudo")
+    const emailzone = document.querySelector(".email")
+    const passwordzone = document.querySelector(".password")
+
+    editbtn.addEventListener("click", () => {
+        editbtn.style.display = "none"
+        validbtn.style.display = "flex"
+
+        pseudozone.removeAttribute('disabled')
+        emailzone.removeAttribute('disabled')
+        passwordzone.removeAttribute('disabled')
+        passwordzone.setAttribute('type', 'text')
+        pseudozone.focus()
+    })
 });
 
 const container = document.getElementById('container');

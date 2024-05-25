@@ -1,5 +1,36 @@
 <?php 
     session_start();
+
+    try
+    {
+        $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    $userstatement = $mysqlClient->prepare('SELECT * FROM users');
+    $userstatement->execute();
+    $users = $userstatement->fetchAll();
+
+    $commentstatement = $mysqlClient->prepare('SELECT * FROM comments WHERE sender = :sender ORDER BY likes DESC');
+    $commentstatement->execute([
+        'sender'=> $_SESSION['user']['user_name'],
+    ]);
+    $comments = $commentstatement->fetchAll();
+    
+    $likestatement = $mysqlClient->prepare('SELECT * FROM likes WHERE user_id = :user_id');
+    $likestatement->execute([
+        'user_id'=> $_SESSION['user']['id'],
+    ]);
+    $likes = $likestatement->fetchAll();
+
+    $ratingstatement = $mysqlClient->prepare('SELECT * FROM ratings WHERE liker_id = :liker_id ORDER BY grade DESC');
+    $ratingstatement->execute([
+        'liker_id'=> $_SESSION['user']['id'],
+    ]);
+    $ratings = $ratingstatement->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +60,133 @@
             <div id="playpausebtn"><span>&#9658;</span></div>
             
             <div class="container" id="container">
-            <form method="post" action="logout.php">
-                <button id="logoutbtn" type="submit">Déconnexion</button>
-            </form>
+                <?php 
+                    foreach ($users as $user) {
+                        if ($user["id"] == $_SESSION["user"]["id"]) {
+                            $_SESSION['user'] = $user;
+                        }
+                    }
+                ?>
+                <form id="form_user_info" action="editprofile.php" method="post">
+                    <input class="infos pseudo" type="text" name="user_name" value="<?php echo $_SESSION['user']['user_name'];?>" disabled>
+
+                    <label class="emaillabel" for="user_email">email :</label><input class="infos email" type="text" name="user_email" value="<?php echo $_SESSION['user']['user_email'];?>" disabled>
+
+                    <label class="passwordlabel" for="user_password">password :</label><input class="infos password" type="password" name="user_password" value="<?php echo $_SESSION['user']['user_password'];?>" disabled>
+                    
+                    <button type="submit" style="display:none" id="valid"><img src="../source/valid.png" alt="edit"></button>
+                </form>
+                
+                <button id="edit" type="button"><img src="../source/edit.png" alt="edit"></button>
+
+                <div class="stats">
+                    <h1>You were there !</h1>
+                    <div class="stat places">
+                        <?php foreach ($ratings as $rating):?>
+                            <img src="<?php echo "../source/".$rating['country']."pin.png"?>" alt="<?php echo$rating['country']."pin"?>">
+                        <?php endforeach;?>
+                    </div>         
+                    
+                    <div class="stat likes">
+                        <h1>Crazy liker !</h1>
+                        <?php $count = 0; 
+                        foreach ($likes as $like){
+                            $count++;    
+                        }?>
+                        <span>You liked <?php echo $count?> posts !</span>
+                    </div>  
+
+                    <h1 id="favtrips">Your favorite trips</h1>
+                    <div class="stat ratings">
+                        <?php foreach ($ratings as $rating):?>
+                            <div class="single">
+                                <img src="<?php echo "../source/".$rating['country'].".png"?>" alt="<?php echo$rating['country']?>"> 
+                                <?php if($rating['grade'] == 5):?>
+                                    <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect_" id="five_">  </button></div>
+
+                                <?php elseif($rating['grade'] == 4):?>
+                                    <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+
+                                <?php elseif($rating['grade'] == 3):?>
+                                    <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+
+                                <?php elseif($rating['grade'] == 2):?>
+                                    <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect" id="three_"></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+
+                                <?php elseif($rating['grade'] == 1):?>
+                                    <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect" id="two_">    </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect" id="three_"></button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
+                                    <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+                                <?php endif;?>
+                            </div>
+                        <?php endforeach;?>
+                    </div>  
+                </div>
+
+                <h1 id="yourcoms">Your comments</h1>
+                <div class="blog"> 
+                    <?php foreach ($comments as $comment) :?>
+                        
+                        <div class="onecom">
+                            <div class="pseudlike">
+                                <span id="who">
+                                    <?php echo $comment['sender'];?>
+                                </span>
+                                <span id="likes">
+
+                                <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                    <form action="comments.php" method="post">
+                                    <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                    </form>
+                                <?php endif;?>
+
+                                <form action="like.php" method="post">
+                                    <?php foreach ($likes as $like) :?>
+                                    <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                        <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                    <?php else :?>
+                                        <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                    <?php endif?>
+                                    <?php endforeach?>
+                                </form>
+                                
+                                <button class="empty"></button>
+                                <span class="likenb"><?php echo $comment['likes'];?></span>
+                                </span>
+                            </div>
+                            <span id="com">
+                                <?php echo $comment['content'];?>
+                            </span>
+                            <span id="loc">
+                                <?php echo "In ".$comment['country'];?>
+                                <?php echo $comment['category'];?>
+                            </span>
+                        </div>
+
+                    <?php endforeach?>
+                </div>
+
+                <form method="post" action="logout.php">
+                    <button id="logoutbtn" type="submit">Disconnect</button>
+                </form>
             </div>
 
         </main>

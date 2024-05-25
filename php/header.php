@@ -1,4 +1,26 @@
 <header>
+    
+    <?php 
+        try
+        {
+            $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+        $userstatement = $mysqlClient->prepare('SELECT * FROM users');
+        $userstatement->execute();
+        $users = $userstatement->fetchAll();
+        
+        foreach ($users as $user) {
+            if ($user["id"] == $_SESSION["user"]["id"]) {
+                $_SESSION['user'] = $user;
+            }
+        }
+    ?>
+
     <a href="/index.php "><img id="logoheader" src="../source/icon.png" alt="icon"></a>
 
     <div id="bar"></div>

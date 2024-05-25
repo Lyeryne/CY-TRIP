@@ -29,9 +29,17 @@
             
             <div class="container" id="container">
                 <div class="form-container sign-up">
-                    <form action="signup.php" method="post"> <!-- Signup à rediriger pour check les supervariables dans post regex mail etc -->
+                    <form action="signup.php" method="post"> <!-- Signup -->
                         <h1>Create Account</h1>
-                        <span>use your email, username and password to register</span>
+
+                        <?php if (isset($_GET["error"]) && $_GET['error'] == 'zxfvwll22_6c') :?>
+                            <span style="color:red;">an account already exist with this email</span>
+                        <?php elseif (isset($_GET["error"]) && $_GET['error'] == 'zxfvwll22_6d') :?>
+                            <span style="color:green;">account created succesfully, login to continue</span>
+                        <?php else :?>
+                            <span>use your email, username and password to register</span>
+                        <?php endif;?>
+
                         <input type="text" placeholder="Username" name="user_name" maxlength="19">
                         <input type="email" placeholder="Email" name="user_email">
                         <input type="password" placeholder="Password" name="user_password">

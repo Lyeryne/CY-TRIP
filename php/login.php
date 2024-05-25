@@ -11,8 +11,7 @@
         die('Erreur : ' . $e->getMessage());
     }
 
-    $sqlQuery = 'SELECT * FROM users';
-    $userstatement = $mysqlClient->prepare($sqlQuery);
+    $userstatement = $mysqlClient->prepare('SELECT * FROM users');
     $userstatement->execute();
     $users = $userstatement->fetchAll();
 
