@@ -4,7 +4,7 @@
     <div id="bar"></div>
 
     <?php if (isset($_SESSION['user']['user_name'])) : ?>
-        <h2>Welcome <?php echo $_SESSION['user']['user_name'] ?></h2>
+        <h2>Welcome <?php echo $_SESSION['user']['user_name']?></h2>
     <?php else :?>
         <h2>Log in to start travelling</h2>
     <?php endif?>
@@ -12,7 +12,7 @@
 
     <nav>
         <button id="btncountries">Countries <img id="openicon" src="../source/openicon.png" alt="openicon"></button>
-        <?php if (isset($_SESSION['user']['user_name'])) : ?>
+        <?php if (isset($_SESSION['user']['user_name'])) :?>
             <a href="/php/profile.php">Your profile</a>
         <?php else :?>
             <a href="/php/login_signup.php">Log in / Sign up</a>
@@ -22,12 +22,16 @@
 </header>
 
 <?php 
-    $countries = ["france", "spain", "japan", "australia", "germany", "morocco", "usa", "russia", "brasil", "south africa"] ;
+    $countries = ["france", "spain", "morocco"] ;
+    $otherones = ["japan", "australia", "germany", "usa", "russia", "brasil", "south africa"] ;
 ?>
 
 <div class="menu-deroulant">
-    <?php foreach ($countries as $country) : ?>
-        <!-- juste en dessous le ici -> v //// c'est à des fins experimentaux bien penser à le re switch en isset pour la vfinale  -->
-        <a class="countryslot" <?php if(!isset($_SESSION['user_name'])) : echo "href=\"/php/".$country.".php\""; else : echo "href=\"/php/login_signup.php\""; endif; ?>><span id="countryname"><?php echo ucfirst($country)?></span> <img id="openicon2" src="../source/openicon.png" alt="openicon"></a>
-    <?php endforeach ?>
+    <?php foreach ($countries as $country) :?>
+        <a class="countryslot" <?php if(isset($_SESSION['user'])) : echo "href=\"/php/".$country.".php\""; else : echo "href=\"/php/login_signup.php\""; endif;?>><span id="countryname"><?php echo ucfirst($country)?></span> <img id="openicon2" src="../source/openicon.png" alt="openicon"></a>
+    <?php endforeach?>
+
+    <?php foreach ($otherones as $otherone) :?>
+        <a class="countryslot" <?php if(isset($_SESSION['user'])) : echo "href=\"/index.php\""; else : echo "href=\"/php/login_signup.php\""; endif;?>><span id="countryname"><?php echo ucfirst($otherone)?></span> <img id="openicon2" src="../source/openicon.png" alt="openicon"></a>
+    <?php endforeach?>
 </div>

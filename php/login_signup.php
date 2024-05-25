@@ -42,7 +42,15 @@
                 <div class="form-container sign-in">
                     <form action="login.php" method="post"> <!-- Login -->
                         <h1>Log In</h1>
-                        <span>use your email and password to connect</span>
+
+                        <?php if (isset($_GET["error"]) && $_GET['error'] == 'zxfvwll22_6a') :?>
+                            <span style="color:red;">no account found with this email</span>
+                        <?php elseif (isset($_GET["error"]) && $_GET['error'] == 'zxfvwll22_6b') :?>
+                            <span style="color:red;">the password you entered is incorrect</span>
+                        <?php else :?>
+                            <span>use your email and password to connect</span>
+                        <?php endif;?>
+
                         <input type="email" placeholder="Email" name="user_email">
                         <input type="password" placeholder="Password" name="user_password">
                         <button type="submit">Log In</button>

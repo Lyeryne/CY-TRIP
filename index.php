@@ -56,7 +56,7 @@
                 <?php endif ?>
 
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/japan.php">
+                    <a href="index.php">
                         <div class="japan">
                             <div class="JP name">Japan</div>
                         </div>
@@ -70,7 +70,7 @@
                 <?php endif ?>
 
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/australia.php">
+                    <a href="index.php">
                         <div class="australia">
                             <div class="AU name">Australia</div>
                         </div>
@@ -84,7 +84,7 @@
                 <?php endif ?>
                     
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/germany.php">
+                    <a href="index.php">
                         <div class="germany">
                             <div class="GE name">Germany</div>
                         </div>
@@ -113,7 +113,7 @@
                 <?php endif ?>
                     
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/usa.php">
+                    <a href="index.php">
                         <div class="usa">
                             <div class="USA name">USA</div>
                         </div>
@@ -127,7 +127,7 @@
                 <?php endif ?>
 
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/russia.php">
+                    <a href="index.php">
                         <div class="russia">
                             <div class="RU name">Russia</div>
                         </div>
@@ -141,7 +141,7 @@
                 <?php endif ?>
                     
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/brasil.php">
+                    <a href="index.php">
                         <div class="brasil">
                             <div class="BR name">Brasil</div>
                         </div>
@@ -155,7 +155,7 @@
                 <?php endif ?>
                     
                 <?php if (isset($_SESSION["user"])) : ?>
-                    <a href="/php/southafrica.php">
+                    <a href="index.php">
                         <div class="southafrica">
                             <div class="SA name">South<br>Africa</div>
                         </div>

@@ -241,6 +241,61 @@
     margin-bottom: 0.8vw;
 }
 
+.btndel {
+    position: absolute;
+    bottom: 0.9vw;
+    left: 0.8vw;
+    background-color: white;
+    border: none;
+    width: 1.2vw;
+    height: 1.3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btndel img {
+    background-color: none;
+    width: 2vw;
+    height: 2vw;
+}
+
+.pseudlike {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty{
+    position: relative;
+    width: 2vw; 
+	height: 2vw; 
+    margin-bottom: -0.5vw;
+    z-index: 2;
+	background: black;
+	clip-path: path("M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181");
+}
+
+.filled {
+    position: absolute;
+    left: 2.7vw;
+    width: 2vw; 
+	height: 2vw; 
+    margin-bottom: -0.5vw;
+    z-index: 1;
+	background: red;
+	clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
+    cursor: pointer;
+}
+
+.likenb {
+    position: absolute;
+    bottom: 1vw;
+    left: 5vw;
+    font-size: 0.9vw;
+}
+
 #com {
     width: 15vw;
     margin-top: 0.5vw;
@@ -275,7 +330,6 @@
     height: 5vw;
     position: relative;
     top: 0.5vw;
-    left: 0.5vw;
     background-color: whitesmoke;
     cursor: pointer;
 }
@@ -293,6 +347,16 @@
     height: 6vw;
     background-color: rgb(254, 206, 0);
     right: 6vw;
+    bottom: 0.25vw;
+    transition: transform 0.5s ease;
+}
+
+.yellowrect_ {
+    position: absolute;
+    width: 6vw;
+    height: 6vw;
+    background-color: rgb(254, 206, 0);
+    bottom: 0.25vw;
     transition: transform 0.5s ease;
 }
 
@@ -302,4 +366,11 @@
     left: 15vw;
     font-size: 1.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#average {
+    position: absolute;
+    top: 57vw;
+    left: 45vw;
+    font-size: 1.5vw;
 }

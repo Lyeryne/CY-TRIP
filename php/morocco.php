@@ -1,3 +1,28 @@
+<?php 
+    session_start();
+
+    try
+    {
+        $mysqlClient = new PDO('mysql:host=localhost;dbname=cy-trip;charset=utf8', 'root', '');
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    $commentstatement = $mysqlClient->prepare('SELECT * FROM comments WHERE country = "morocco" ORDER BY likes DESC');
+    $commentstatement->execute();
+    $comments = $commentstatement->fetchAll();
+
+    $likestatement = $mysqlClient->prepare('SELECT * FROM likes');
+    $likestatement->execute();
+    $likes = $likestatement->fetchAll();
+
+    $ratingstatement = $mysqlClient->prepare('SELECT * FROM ratings WHERE country = "morocco"');
+    $ratingstatement->execute();
+    $ratings = $ratingstatement->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -40,133 +65,242 @@
         </div>
 
         <div class="blogzone">
-            <h3 id="hubtitle">The Hub</h3>
+                <h3 id="hubtitle">The Hub</h3>
 
-            <div class="hub">
+                <div class="hub">
                     <div class="section spots">
                         <h3>Spots</h3>
-                        <form action="morocco.php" method="post">
                             <div class="blog" id="spots">
                                     
-                                <?php if (isset($_POST['comspotsvalue'])) :
-                                        foreach ($_POST as $com) : 
-                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $user_name = "superuser"; // $_POST['user_name'];
-                                ?>
+                                <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'spots') :?>
                                  
-                                 <div class="onecom">
-                                    <span id="who">
-                                        <?php echo $user_name." : "; ?>
-                                    </span>
-                                    <span id="com">
-                                        <?php echo $com; ?>
-                                    </span>
-                                </div>
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
 
-                                    <?php endforeach ?>
-                                <?php endif ?>
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                        <span id="com">
+                                            <?php echo $comment['content'];?>
+                                        </span>
+                                    </div>
+
+                                <?php endif?>
+                                <?php endforeach?>
 
                             </div>
 
-                            <textarea class="txtblog" id="txtspots" type="text" name="comspotsvalue"></textarea>
+                        <form action="comments.php" method="post">
+                            <textarea maxlength="500" class="txtblog" id="txtspots" type="text" name="commoroccospots"></textarea>
                             <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
                     </div>
 
                     <div class="section dishes">
-                        <h3>Dishes</h3>
-                        <form action="morocco.php" method="post">
+                         <h3>Dishes</h3>
                             <div class="blog" id="dishes">
-
-                                <?php if (isset($_POST['comdishesvalue'])) :
-                                        foreach ($_POST as $com) : 
-                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $user_name = "superuser"; // $_POST['user_name'];
-                                ?>
+                                    
+                                <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'dishes') :?>
                                  
-                                 <div class="onecom">
-                                    <span id="who">
-                                        <?php echo $user_name." : "; ?>
-                                    </span>
-                                    <span id="com">
-                                        <?php echo $com; ?>
-                                    </span>
-                                </div>
-                                
-                                    <?php endforeach ?>
-                                <?php endif ?>
-                                
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel dishes" type="submit" name="delcomdishes" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                        <span id="com">
+                                            <?php echo $comment['content'];?>
+                                        </span>
+                                    </div>
+
+                                <?php endif?>
+                                <?php endforeach?>
+
                             </div>
 
-                            <textarea class="txtblog" id="txtdishes" type="text" name="comdishesvalue"></textarea>
+                        <form action="comments.php" method="post">
+                            <textarea maxlength="500" class="txtblog" id="txtdishes" type="text" name="commoroccodishes"></textarea>
                             <div class="btnsize sizedishes"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btndishes" >Send</button>
                         </form>
                     </div>
                     
                     <div class="section activities">
-                        <h3>Activities</h3>
-                        <form action="morocco.php" method="post">
+                         <h3>Activities</h3>
                             <div class="blog" id="activities">
-
-                                <?php if (isset($_POST['comactivitiesvalue'])) :
-                                        foreach ($_POST as $com) : 
-                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $user_name = "superuser"; // $_POST['user_name'];
-                                ?>
+                                    
+                                <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'activities') :?>
                                  
-                                 <div class="onecom">
-                                    <span id="who">
-                                        <?php echo $user_name." : "; ?>
-                                    </span>
-                                    <span id="com">
-                                        <?php echo $com; ?>
-                                    </span>
-                                </div>
-                                
-                                    <?php endforeach ?>
-                                <?php endif ?>
-                                
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel activities" type="submit" name="delcomactivities" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                        <span id="com">
+                                            <?php echo $comment['content'];?>
+                                        </span>
+                                    </div>
+
+                                <?php endif?>
+                                <?php endforeach?>
+
                             </div>
 
-                            <textarea class="txtblog" id="txtactivities" type="text" name="comactivitiesvalue"></textarea>
+                        <form action="comments.php" method="post">
+                            <textarea maxlength="500" class="txtblog" id="txtactivities" type="text" name="commoroccoactivities"></textarea>
                             <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnactivities" >Send</button>
                         </form>
                     </div>
                 </div>
 
-            <h3 id="ratetxt">Rate your experience in Morocco : </h3>
+                <h3 id="ratetxt">Rate your experience in Morocco : </h3>
 
-            <div class="rating">
-                <div class="starborder">
-                    <div class="star one">
-                        <div class="yellowrect" id="one"></div>
-                    </div>
-                </div>
-                <div class="starborder">
-                    <div class="star two">
-                        <div class="yellowrect" id="two"></div>
-                    </div>
-                </div>
-                <div class="starborder">
-                    <div class="star three">
-                        <div class="yellowrect" id="three"></div>
-                    </div>
-                </div>
-                <div class="starborder">
-                    <div class="star four">
-                        <div class="yellowrect" id="four"></div>
-                    </div>
-                </div>
-                <div class="starborder">
-                    <div class="star five">
-                        <div class="yellowrect" id="five"></div>
-                    </div>
-                </div>
+                <?php 
+                    $found = false;
+                    foreach ($ratings as $rating) {
+                        if ($rating['liker_id'] == $_SESSION["user"]['id'] && $rating['country'] == "morocco") {
+                            $found = true;
+                            $grade = $rating['grade'];
+                            break;
+                        }
+                    }
+                    
+                    if ($found) :?>
+
+                <form class="rating" action="like.php" method="post">
+                        <?php if($grade == 5) :?>
+                            <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect_" id="five_">  </button></div>
+                        <?php elseif($grade == 4) :?>
+                            <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+                        <?php elseif($grade == 3) :?>
+                            <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+                        <?php elseif($grade == 2) :?>
+                            <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+                        <?php elseif($grade == 1) :?>
+                            <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
+                        <?php endif;?>
+                </form>
+
+                <?php else :?>
+
+                <form class="rating" action="like.php" method="post">
+                        <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect" id="one" ></button></div>
+                        <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect" id="two">    </button></div>
+                        <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect" id="three"></button></div>
+                        <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect" id="four">  </button></div>
+                        <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five">  </button></div>
+                </form>
+                <?php endif;?>
+                
+                <h2 id="average">
+                    <?php
+                        $av = 0;
+                        $count = 0;
+                        foreach ($ratings as $rating) {
+                            $av += $rating['grade'];
+                            $count++;
+                        }
+                        
+                        if ($count == 0) {
+                            $av = 0;
+                        }
+                        else{
+                            $av = round($av / $count,1);
+                        }
+
+                        echo 'Average rates for Morocco : '.$av.'/5';
+                    ?>
+                </h2>
             </div>
-        </div>
     </main>
 
     <?php require_once(__DIR__."/footer.php") ?> 

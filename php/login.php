@@ -16,25 +16,35 @@
     $userstatement->execute();
     $users = $userstatement->fetchAll();
 
-    $loginSuccessful = false;
+    $emailgood = false;
+    $passgood = false;
 
     foreach ($users as $user)
     {
-        if ($user['user_email'] == $_POST['user_email'] && $user['user_password'] == $_POST['user_password'])
+        if ($user['user_email'] == $_POST['user_email'])
         {
-            $_SESSION["user"] = $user;
-            $loginSuccessful = true;
+            $emailgood = true;
+
+            if ($user['user_password'] == $_POST['user_password'])
+            {
+                $passgood = true;
+                break;
+            }
             break;
         }
     }
     
-    if ($loginSuccessful) {
-        // Redirection vers une autre page après une connexion réussie
-        header("Location: ../index.php");
-        exit(); // Assurez-vous de terminer le script après la redirection
-    } else {
-        // Redirection vers la page de connexion avec un message d'erreur en cas de connexion échouée
-        header("Location: login_signup.php?error=invalid_credentials");
+    if ($emailgood && $passgood) {
+        $_SESSION["user"] = $user;
+        header("Location: /index.php");
+        exit();
+    } 
+    else if ($emailgood && !$passgood) {
+        header("Location: login_signup.php?error=zxfvwll22_6b");
+        exit();
+    }
+    else{
+        header("Location: login_signup.php?error=zxfvwll22_6a");
         exit();
     }
 ?>

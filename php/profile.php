@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="/style/header_footer.css">
         <link rel="stylesheet" type="text/css" href="/style/profile.css">
 
+        <script type="text/javascript" src="/script/header_footer.js"></script>
         <script type="text/javascript" src="/script/profile.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">

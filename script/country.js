@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const bgvideo = document.querySelector("#bgvideo")
     const playpausebtn = document.querySelector("#playpausebtn")
 

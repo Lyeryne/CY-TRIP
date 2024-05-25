@@ -78,12 +78,14 @@
     color: rgb(29, 147, 113);
     font-size: 2.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 1.5vw;
+    top: 10vw;
 }
 
 .descript p{
+    margin-top: 1vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.9vw;
+    font-size: 1.25vw;
+    text-align: justify;
 }
 
 #countryico {
@@ -91,6 +93,142 @@
     height: 23vw;
     top: 2.1vw;
     left: 6vw;
+}
+
+.advicezone {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin-top: 35vw;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20vw;
+    gap: 1vw;
+}
+
+#advicetitle{
+    color: rgb(29, 147, 113);
+    font-size: 2.7vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 2vw;
+    margin-bottom: -0.5vw;
+}
+
+#titletower {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    text-align: center;
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 53vw;
+}
+
+#titlecytech{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    text-align: center;
+    width: 15vw;
+    margin-top: 6vw;
+    margin-left: 20vw;
+}
+
+#titleport{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 53vw;
+}
+
+#descripttower {
+    text-align: justify;
+    font-size: 1.4vw;
+    width: 60vw;
+    margin-top: 2vh;
+    margin-left: 29vw;
+}
+
+#descriptcytech{
+    text-align: justify;
+    font-size: 1.4vw;
+    width: 60vw;
+    margin-top: 2vh;
+    margin-left: -2vw;
+}
+
+#descriptport{
+    text-align: justify;
+    font-size: 1.4vw;
+    width: 60vw;
+    margin-top: 2vh;
+    margin-left: 29vw;
+}
+
+.effeltower > p{
+    margin-top: 2vh;
+    font-size: 1.4vw;
+}
+
+#adresstower{
+    position: relative;
+    top: 1vw;
+    left: 16vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+#adresscytech{
+    position: relative;
+    margin-right: 35vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+    height: 23vw;
+}
+
+#adressport{
+    position: relative;
+    top: 1vw;
+    right: 2vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+    margin-left: 35vw;
+    height: 23vw;
+}
+
+#adresstower:hover, #adresscytech:hover, #adressport:hover{
+    color: rgb(14, 199, 146);
+}
+
+#imgeffeltower {
+    position: absolute;
+    height: 16vw;
+    margin-top: 3vw;
+    margin-left: -45vw;
+}
+
+#imgcytech{
+    position: absolute;
+    height: 13.5vw;
+    margin-top: -1vw;
+    margin-left: 15vw;
+}
+
+#imgport{
+    position: absolute;
+    height: 17vw;
+    margin-top: -0.5vw;
+    margin-left: -45vw;
 }
 
 .blogzone {
@@ -139,6 +277,54 @@
     padding-bottom: 0.35vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.advice1, .advice2, .advice3 {
+    border: solid rgb(29, 147, 113, 0.6) 0.5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+    margin-left: 2.2vw;
+    /* margin-top: 4vh; */
+    padding-bottom: 4vh;
+}
+
+.advice1 h3, .advice2 h3, .advice3 h3 {
+    border-bottom: solid rgb(29, 147, 113) 0.2vw;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 42vw;
+    margin-top: 1.5vw;
+    font-size: 2vw;
+    padding-bottom: 0.35vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.advice3 {
+    margin-bottom: 5vw;
+}
+
+
+/* .advice2 {
+    border: solid rgb(29, 147, 113, 0.6) 0.5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+    margin-left: 2.2vw;
+    margin-top: 10vh;
+    padding-bottom: 4vh;
+} */
+/* .advice3 {
+    border: solid rgb(29, 147, 113, 0.6) 0.5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+    margin-left: 2.2vw;
+    margin-top: 10vh;
+    padding-bottom: 4vh;
+} */
 
 .blog {
     position: absolute;
@@ -240,6 +426,61 @@
     margin-bottom: 0.8vw;
 }
 
+.btndel {
+    position: absolute;
+    top: 1.9vw;
+    left: 0.8vw;
+    background-color: white;
+    border: none;
+    width: 1.2vw;
+    height: 1.3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btndel img {
+    background-color: none;
+    width: 2vw;
+    height: 2vw;
+}
+
+.pseudlike {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty{
+    position: relative;
+    width: 2vw; 
+	height: 2vw; 
+    margin-bottom: -0.5vw;
+    z-index: 2;
+	background: black;
+	clip-path: path("M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181");
+}
+
+.filled {
+    position: absolute;
+    left: 2.7vw;
+    width: 2vw; 
+	height: 2vw; 
+    margin-bottom: -0.5vw;
+    z-index: 1;
+	background: red;
+	clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
+    cursor: pointer;
+}
+
+.likenb {
+    position: absolute;
+    top: 2vw;
+    left: 5vw;
+    font-size: 0.9vw;
+}
+
 #com {
     width: 15vw;
     margin-top: 0.5vw;
@@ -274,7 +515,6 @@
     height: 5vw;
     position: relative;
     top: 0.5vw;
-    left: 0.5vw;
     background-color: whitesmoke;
     cursor: pointer;
 }
@@ -292,6 +532,16 @@
     height: 6vw;
     background-color: rgb(254, 206, 0);
     right: 6vw;
+    bottom: 0.25vw;
+    transition: transform 0.5s ease;
+}
+
+.yellowrect_ {
+    position: absolute;
+    width: 6vw;
+    height: 6vw;
+    background-color: rgb(254, 206, 0);
+    bottom: 0.25vw;
     transition: transform 0.5s ease;
 }
 
@@ -301,4 +551,11 @@
     left: 15vw;
     font-size: 1.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#average {
+    position: absolute;
+    top: 57vw;
+    left: 45vw;
+    font-size: 1.5vw;
 }

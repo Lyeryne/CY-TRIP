@@ -1,5 +1,27 @@
 <?php 
     session_start();
+
+    try
+    {
+        $mysqlClient = new PDO('mysql:host=localhost;dbname=cy-trip;charset=utf8', 'root', '');
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    $commentstatement = $mysqlClient->prepare('SELECT * FROM comments WHERE country = "france" ORDER BY likes DESC');
+    $commentstatement->execute();
+    $comments = $commentstatement->fetchAll();
+    
+
+    $likestatement = $mysqlClient->prepare('SELECT * FROM likes');
+    $likestatement->execute();
+    $likes = $likestatement->fetchAll();
+
+    $ratingstatement = $mysqlClient->prepare('SELECT * FROM ratings WHERE country = "france"');
+    $ratingstatement->execute();
+    $ratings = $ratingstatement->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +42,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <?php require_once(__DIR__."/header.php") ?> 
+        <?php require_once(__DIR__."/header.php");?> 
 
         <main>
             <video autoplay loop muted id="bgvideo">
@@ -35,10 +57,97 @@
             <div class="descript">
                     <div class="descriptxt">
                         <h3>History of France</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum illum, quisquam soluta cumque quasi, doloremque vel laborum eligendi assumenda commodi alias officia placeat magni perferendis quas molestiae necessitatibus. <br><br>Voluptate, tempore?</p>
+                        <br>
+                        <p>Welcome to France, a dream destination for travellers in search of unforgettable discoveries. Known for its rich cultural heritage, varied landscapes and culinary delights, France is a true invitation to escape. Whether you're drawn to the romance of Paris, the picturesque vineyards of Bordeaux, the sunny beaches of the Côte d'Azur, or the majestic châteaux of the Loire Valley, each region offers a unique and captivating experience. <br> <br> Explore the French way of life, savour exquisite food in Michelin-starred restaurants, and be seduced by the elegance and timeless charm of this fascinating country. Your adventure in France will be much more than just a trip, it will be a total immersion in a world of beauty, culture and passion.</p>
                     </div>
                     <img id="countryico" src="../source/frenchguy.png" alt="countryico">
             </div>
+
+            <div class="advicezone">
+            <h3 id=advicetitle>Our Advices</h3> <br>
+
+            <div class="advice1">
+                <div class="area_spot">
+                    <h3>Spots</h3>
+
+                    <div class="effeltower">
+                        <p>In this area you will find the best places in France along with their respective addresses.</p>
+                        <img id="imgeffeltower" src="../source/effeltower.png" alt="imgeffeltower">
+                        <p id="titletower">The Effel Tower</p>
+                        <p id="descripttower">Welcome to the Eiffel Tower, the most emblematic symbol of Paris and an architectural marvel that attracts millions of visitors every year. Inaugurated in 1889 for the Universal Exhibition, this majestic iron structure stands 324 metres high and offers a spectacular panoramic view of the City of Light.</p>
+                        <a href="https://maps.app.goo.gl/gAzdFa69rzqTFeE3A" target="_blank" id="adresstower">Av. Gustave Eiffel, 75007 Paris</a>
+                    </div>
+
+                    <div class="cytech">
+                        <img id="imgcytech" src="../source/siteducaca.png" alt="site du parc">
+                        <p id="titlecytech">CY TECH</p>
+                        <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
+                        <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
+                    </div>
+
+                    <div class="vieuxport">
+                        <img id="imgport" src="../source/vieux_port.png" alt="vieux_port">
+                        <p id="titleport">The port of Marseille</p>
+                        <p id="descriptport">Experience the timeless charm of Marseille's Old Port, where history meets modernity. Enjoy a traditional bouillabaisse at a quayside café, admire the colorful boats, and soak in the lively atmosphere. With bustling markets, stunning views of Notre-Dame de la Garde, and a unique cultural blend, the Vieux-Port offers an unforgettable Mediterranean experience.</p>
+                        <a href="https://maps.app.goo.gl/WSkW8Hv197CkNM9p9" target="_blank" id="adressport">Vieux-Port, 13001 Marseille</a>
+                    </div>
+                </div>
+            </div>
+            <div class="advice2">
+                <div class="area dishes">
+                    <h3>Dishes</h3>
+
+                    <div class="effeltower">
+                        <p>In this area you will find the best places in France along with their respective addresses.</p>
+                        <img id="imgeffeltower" src="../source/effeltower.png" alt="imgeffeltower">
+                        <p id="titletower">The Effel Tower</p>
+                        <p id="descripttower">Welcome to the Eiffel Tower, the most emblematic symbol of Paris and an architectural marvel that attracts millions of visitors every year. Inaugurated in 1889 for the Universal Exhibition, this majestic iron structure stands 324 metres high and offers a spectacular panoramic view of the City of Light.</p>
+                        <a href="https://maps.app.goo.gl/gAzdFa69rzqTFeE3A" target="_blank" id="adresstower">Av. Gustave Eiffel, 75007 Paris</a>
+                    </div>
+
+                    <div class="cytech">
+                        <img id="imgcytech" src="../source/siteducaca.png" alt="site du parc">
+                        <p id="titlecytech">CY TECH</p>
+                        <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
+                        <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
+                    </div>
+
+                    <div class="vieuxport">
+                        <img id="imgport" src="../source/vieux_port.png" alt="vieux_port">
+                        <p id="titleport">The port of Marseille</p>
+                        <p id="descriptport">Experience the timeless charm of Marseille's Old Port, where history meets modernity. Enjoy a traditional bouillabaisse at a quayside café, admire the colorful boats, and soak in the lively atmosphere. With bustling markets, stunning views of Notre-Dame de la Garde, and a unique cultural blend, the Vieux-Port offers an unforgettable Mediterranean experience.</p>
+                        <a href="https://maps.app.goo.gl/WSkW8Hv197CkNM9p9" target="_blank" id="adressport">Vieux-Port, 13001 Marseille</a>
+                    </div>
+                </div>
+            </div>
+            <div class="advice3">
+                <div class="area Activities">
+                    <h3>Activities</h3>
+
+                    <div class="effeltower">
+                        <p>In this area you will find the best places in France along with their respective addresses.</p>
+                        <img id="imgeffeltower" src="../source/effeltower.png" alt="imgeffeltower">
+                        <p id="titletower">The Effel Tower</p>
+                        <p id="descripttower">Welcome to the Eiffel Tower, the most emblematic symbol of Paris and an architectural marvel that attracts millions of visitors every year. Inaugurated in 1889 for the Universal Exhibition, this majestic iron structure stands 324 metres high and offers a spectacular panoramic view of the City of Light.</p>
+                        <a href="https://maps.app.goo.gl/gAzdFa69rzqTFeE3A" target="_blank" id="adresstower">Av. Gustave Eiffel, 75007 Paris</a>
+                    </div>
+
+                    <div class="cytech">
+                        <img id="imgcytech" src="../source/siteducaca.png" alt="site du parc">
+                        <p id="titlecytech">CY TECH</p>
+                        <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
+                        <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
+                    </div>
+
+                    <div class="vieuxport">
+                        <img id="imgport" src="../source/vieux_port.png" alt="vieux_port">
+                        <p id="titleport">The port of Marseille</p>
+                        <p id="descriptport">Experience the timeless charm of Marseille's Old Port, where history meets modernity. Enjoy a traditional bouillabaisse at a quayside café, admire the colorful boats, and soak in the lively atmosphere. With bustling markets, stunning views of Notre-Dame de la Garde, and a unique cultural blend, the Vieux-Port offers an unforgettable Mediterranean experience.</p>
+                        <a href="https://maps.app.goo.gl/WSkW8Hv197CkNM9p9" target="_blank" id="adressport">Vieux-Port, 13001 Marseille</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <div class="blogzone">
                 <h3 id="hubtitle">The Hub</h3>
@@ -46,92 +155,152 @@
                 <div class="hub">
                     <div class="section spots">
                         <h3>Spots</h3>
-                        <form action="france.php" method="post">
                             <div class="blog" id="spots">
                                     
-                                <?php if (isset($_POST['comspotsvalue'])) :
-                                        foreach ($_POST as $com) : 
-                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $user_name = "superuser"; // $_POST['user_name'];
-                                ?>
+                                <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'spots') :?>
                                  
-                                 <div class="onecom">
-                                    <span id="who">
-                                        <?php echo $user_name." : "; ?>
-                                    </span>
-                                    <span id="com">
-                                        <?php echo $com; ?>
-                                    </span>
-                                </div>
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
 
-                                    <?php endforeach ?>
-                                <?php endif ?>
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                        <span id="com">
+                                            <?php echo $comment['content'];?>
+                                        </span>
+                                    </div>
+
+                                <?php endif?>
+                                <?php endforeach?>
 
                             </div>
 
-                            <textarea class="txtblog" id="txtspots" type="text" name="comspotsvalue"></textarea>
+                        <form action="comments.php" method="post">
+                            <textarea maxlength="500" class="txtblog" id="txtspots" type="text" name="comfrancespots"></textarea>
                             <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
                     </div>
 
                     <div class="section dishes">
-                        <h3>Dishes</h3>
-                        <form action="france.php" method="post">
+                         <h3>Dishes</h3>
                             <div class="blog" id="dishes">
-
-                                <?php if (isset($_POST['comdishesvalue'])) :
-                                        foreach ($_POST as $com) : 
-                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $user_name = "superuser"; // $_POST['user_name'];
-                                ?>
+                                    
+                                <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'dishes') :?>
                                  
-                                 <div class="onecom">
-                                    <span id="who">
-                                        <?php echo $user_name." : "; ?>
-                                    </span>
-                                    <span id="com">
-                                        <?php echo $com; ?>
-                                    </span>
-                                </div>
-                                
-                                    <?php endforeach ?>
-                                <?php endif ?>
-                                
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel dishes" type="submit" name="delcomdishes" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                        <span id="com">
+                                            <?php echo $comment['content'];?>
+                                        </span>
+                                    </div>
+
+                                <?php endif?>
+                                <?php endforeach?>
+
                             </div>
 
-                            <textarea class="txtblog" id="txtdishes" type="text" name="comdishesvalue"></textarea>
+                        <form action="comments.php" method="post">
+                            <textarea maxlength="500" class="txtblog" id="txtdishes" type="text" name="comfrancedishes"></textarea>
                             <div class="btnsize sizedishes"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btndishes" >Send</button>
                         </form>
                     </div>
                     
                     <div class="section activities">
-                        <h3>Activities</h3>
-                        <form action="france.php" method="post">
+                         <h3>Activities</h3>
                             <div class="blog" id="activities">
-
-                                <?php if (isset($_POST['comactivitiesvalue'])) :
-                                        foreach ($_POST as $com) : 
-                                        //imaginons que le pseudo est récup en post puisque l'user est connecté
-                                        $user_name = "superuser"; // $_POST['user_name'];
-                                ?>
+                                    
+                                <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'activities') :?>
                                  
-                                 <div class="onecom">
-                                    <span id="who">
-                                        <?php echo $user_name." : "; ?>
-                                    </span>
-                                    <span id="com">
-                                        <?php echo $com; ?>
-                                    </span>
-                                </div>
-                                
-                                    <?php endforeach ?>
-                                <?php endif ?>
-                                
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel activities" type="submit" name="delcomactivities" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                        <span id="com">
+                                            <?php echo $comment['content'];?>
+                                        </span>
+                                    </div>
+
+                                <?php endif?>
+                                <?php endforeach?>
+
                             </div>
 
-                            <textarea class="txtblog" id="txtactivities" type="text" name="comactivitiesvalue"></textarea>
+                        <form action="comments.php" method="post">
+                            <textarea maxlength="500" class="txtblog" id="txtactivities" type="text" name="comfranceactivities"></textarea>
                             <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnactivities" >Send</button>
                         </form>
@@ -140,16 +309,85 @@
 
                 <h3 id="ratetxt">Rate your experience in France : </h3>
 
-                <div class="rating">
-                        <div class="starborder"><div class="star one"><div class="yellowrect" id="one"></div></div></div>
-                        <div class="starborder"><div class="star two"><div class="yellowrect" id="two"></div></div></div>
-                        <div class="starborder"><div class="star three"><div class="yellowrect" id="three"></div></div></div>
-                        <div class="starborder"><div class="star four"><div class="yellowrect" id="four"></div></div></div>
-                        <div class="starborder"><div class="star five"><div class="yellowrect" id="five"></div></div></div>
-                </div>
+                <?php 
+                    $found = false;
+                    foreach ($ratings as $rating) {
+                        if ($rating['liker_id'] == $_SESSION["user"]['id'] && $rating['country'] == "france") {
+                            $found = true;
+                            $grade = $rating['grade'];
+                            break;
+                        }
+                    }
+                    
+                    if ($found) :?>
+
+                <form class="rating" action="like.php" method="post">
+                        <?php if($grade == 5) :?>
+                            <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect_" id="five_">  </button></div>
+                        <?php elseif($grade == 4) :?>
+                            <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five">  </button></div>
+                        <?php elseif($grade == 3) :?>
+                            <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four">  </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five">  </button></div>
+                        <?php elseif($grade == 2) :?>
+                            <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect" id="three"></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four">  </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five">  </button></div>
+                        <?php elseif($grade == 1) :?>
+                            <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect" id="two">    </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect" id="three"></button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four">  </button></div>
+                            <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five">  </button></div>
+                        <?php endif;?>
+                </form>
+
+                <?php else :?>
+
+                <form class="rating" action="like.php" method="post">
+                        <div class="starborder"><button type="submit" value="france" name="starone" class="star one"><div class="yellowrect" id="one" ></button></div>
+                        <div class="starborder"><button type="submit" value="france" name="startwo" class="star two"><div class="yellowrect" id="two">    </button></div>
+                        <div class="starborder"><button type="submit" value="france" name="starthree" class="star three"><div class="yellowrect" id="three"></button></div>
+                        <div class="starborder"><button type="submit" value="france" name="starfour" class="star four"><div class="yellowrect" id="four">  </button></div>
+                        <div class="starborder"><button type="submit" value="france" name="starfive" class="star five"><div class="yellowrect" id="five">  </button></div>
+                </form>
+                <?php endif;?>
+                
+                <h2 id="average">
+                    <?php
+                        $av = 0;
+                        $count = 0;
+                        foreach ($ratings as $rating) {
+                            $av += $rating['grade'];
+                            $count++;
+                        }
+                        
+                        if ($count == 0) {
+                            $av = 0;
+                        }
+                        else{
+                            $av = round($av / $count,1);
+                        }
+
+                        echo 'Average rates for France : '.$av.'/5';
+                    ?>
+                </h2>
             </div>
         </main>   
         
-        <?php require_once(__DIR__."/footer.php") ?> 
+        <?php require_once(__DIR__."/footer.php");?> 
     </body>
 </html>
