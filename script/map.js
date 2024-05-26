@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Define objects for each country with HTML element and name
     const france = {
         html : document.querySelector('.france'),
         name : "France"
@@ -49,8 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         name : "South Africa"
     }
 
+    // Array containing all country objects
     const countries = [france, spain, japan, australia, germany, morocco, usa, russia, brasil, southafrica];
 
+    // Add event listeners to each country HTML element for mouseover and mouseout events
     countries.forEach(country => {
         country.html.addEventListener('mouseover', () => {
             country.html.classList.add("hovered");

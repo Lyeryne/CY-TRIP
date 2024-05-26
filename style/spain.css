@@ -101,7 +101,7 @@
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 60vw;
+    height: 65vw;
     margin-top: 35vw;
     background-color: whitesmoke;
     text-align: center;
@@ -253,7 +253,7 @@
     margin-left: -2vw;
 }
 
-.area_spots_one > p, .area_dishes_one > p, .area_activities_one > p{
+.area_spots_one > p, .area_restaurants_one > p, .area_activities_one > p{
     margin-top: 2vh;
     font-size: 1.4vw;
 }
@@ -351,7 +351,7 @@
 
 #imgtablao{
     position: absolute;
-    height: 16vw;
+    height: 15vw;
     margin-top: -0.5vw;
     margin-left: -46.5vw;
     width: 28vw;
@@ -619,7 +619,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 4vw;
+    margin-top: 7vw;
     margin-left: 15vw;
 }
 
@@ -661,7 +661,7 @@
 
 #ratetxt {
     position: absolute;
-    top: 51vw;
+    top: 54.5vw;
     left: 15vw;
     font-size: 1.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -669,7 +669,7 @@
 
 #average {
     position: absolute;
-    top: 57vw;
+    top: 60vw;
     left: 45vw;
     font-size: 1.5vw;
 }

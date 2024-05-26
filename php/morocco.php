@@ -1,16 +1,20 @@
 <?php 
+    // Starting a PHP session
     session_start();
-
+    // Requiring the sqlconfig.php file which likely contains database connection details
     require_once(__DIR__."/sqlconfig.php");
 
+    // Retrieving comments related to Morocco from the database, ordered by likes
     $commentstatement = $mysqlClient->prepare('SELECT * FROM comments WHERE country = "morocco" ORDER BY likes DESC');
     $commentstatement->execute();
     $comments = $commentstatement->fetchAll();
 
+    // Retrieving likes from the database
     $likestatement = $mysqlClient->prepare('SELECT * FROM likes');
     $likestatement->execute();
     $likes = $likestatement->fetchAll();
-
+    
+    // Retrieving ratings related to Morocco from the database
     $ratingstatement = $mysqlClient->prepare('SELECT * FROM ratings WHERE country = "morocco"');
     $ratingstatement->execute();
     $ratings = $ratingstatement->fetchAll();
@@ -36,6 +40,7 @@
 </head>
 
 <body>
+    <!-- Inclusion of the header.php file with the require_once function the absolute path -->
     <?php require_once(__DIR__."/header.php") ?> 
  
 
@@ -43,6 +48,7 @@
         <video autoplay loop muted id="bgvideo">
                 <source src="../source/morroco.mp4">
             </video>
+            <!-- Play/pause button for background video -->
             <div id="playpausebtn"><span>&#9658;</span></div>
 
         <div class="welcome">
@@ -58,9 +64,11 @@
             <img id="countryico" src="../source/moroccanguy.png" alt="countryico">
         </div>
 
+        <!-- Advice zone with sections for spots, restaurants and activities -->
         <div class="advicezone">
             <h3 id=advicetitle>Our Advices</h3> <br>
 
+            <!-- Recommended spots section -->
             <div class="advice1">
                 <div class="area Spots">
                     <h3>Spots</h3>
@@ -89,26 +97,27 @@
                 </div>
             </div>
 
+             <!-- Recommended restaurants section -->
             <div class="advice2">
-                <div class="area Dishes">
+                <div class="area restaurants">
                     <h3>Restaurants</h3>
 
-                    <div class="area_dishes_one">
-                        <p>In this section, you'll find the best dishes and restaurants in Marocco, along with their respective addresses.</p>
+                    <div class="area_restaurants_one">
+                        <p>In this section, you'll find the best restaurants and restaurants in Marocco, along with their respective addresses.</p>
                         <img id="imgamandine" src="../source/amandine.jpg" alt="amandine">
                         <p id="titleamandine">Amandine's delight</p>
                         <p id="descriptamandine">Look no further than Amandine for some of the best pastries in Marrakech. The patisserie sells both French and Moroccan pastries and cookies, and there’s a full drink menu if you’d like to sit and stay awhile. Order a plate of mixed Moroccan cookies, particularly the sweet briouat, and pair it with a French pastry such as the religieuse a choux filled with caramel cream and topped with more caramel drizzle. </p>
                         <a href="https://plus61.com" target="_blank" id="adressamandine">177 Rue Mohammed Al Béqal, Marrakech 40000</a>
                     </div>
 
-                    <div class="area_dishes_two">
+                    <div class="area_restaurants_two">
                         <img id="imgzellij" src="../source/darzellij.png" alt="baga">
                         <p id="titlezellij">Dar Zellij</p>
                         <p id="descriptzellij">Dining at Dar Zellij is much more than a meal - it's a real cultural immersion! The staff, dressed in traditional garb, welcome you with warm Moroccan hospitality. In the evening, you can also enjoy live music with performances by gnawa musicians or oud players, adding a magical touch to your evening.</p><br>
                         <a href="https://marrakech-riads.com/restaurant-dar-zellij/" target="_blank" id="adresszellij">8 Derb Chorfa Lakbir - Marrakesh 40030</a>
                     </div>
 
-                    <div class="area_dishes_three">
+                    <div class="area_restaurants_three">
                         <img id="imgjardin" src="../source/imgjardin.png" alt="Le_jardin">
                         <p id="titlejardin">Le Jardin</p>
                         <p id="descriptjardin">Discover Le Jardin in Marrakech, an enchanting restaurant nestled in a magnificent garden. Enjoy delicious fresh fruit and natural juices in a peaceful, verdant setting. Enjoy this unique taste experience during your visit to Marrakech!</p>
@@ -117,6 +126,7 @@
                 </div>
             </div>
             
+            <!-- Recommended activities section -->
             <div class="advice3">
                 <div class="area Activities">
                     <h3>Activities</h3>
@@ -146,6 +156,7 @@
             </div>
         </div>        
 
+        <!-- Section which manages the blogzone part of Morocco -->
         <div class="blogzone">
                 <h3 id="hubtitle">The Hub</h3>
 
@@ -153,7 +164,8 @@
                     <input type="text" maxlength="500" name="search" id="searchbar" class="txtsearch"></input>
                     <button type="submit" id="searchbtn"><img id="searchicon" src="../source/search.png" alt="search"></button>
                 </form>
-
+                
+                <!-- Hub content -->
                 <div class="hub">
                     <div class="section spots">
                         <h3>Spots</h3>
@@ -161,20 +173,23 @@
                                     
                                 <?php foreach ($comments as $comment) :
                                     if ($comment['category'] == 'spots' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
-                                 
+
+                                    <!-- Individual comment -->
                                     <div class="onecom">
                                         <div class="pseudlike">
+                                            <!-- Comment sender -->
                                             <span id="who">
                                                 <?php echo $comment['sender'];?>
                                             </span>
+                                            <!-- Like button -->
                                             <span id="likes">
-
+                                            <!-- Delete button (if user is the sender or has root access) -->
                                             <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
                                                 <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
                                             <?php endif;?>
-
+                                            <!-- Like/unlike button -->
                                             <form action="like.php" method="post">
                                                 <?php foreach ($likes as $like) :?>
                                                 <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
@@ -186,21 +201,25 @@
                                             </form>
                                             
                                             <button class="empty"></button>
+                                             <!-- Number of likes -->
                                             <span class="likenb"><?php echo $comment['likes'];?></span>
                                             </span>
                                         </div>
+                                            <!-- Comment content -->
                                             <span id="com">
                                                 <?php echo str_replace($_GET['search'],'<mark>'.$_GET['search'].'</mark>',$comment['content']);?>
                                             </span>
                                     </div>
 
                                     <?php elseif ($comment['category'] == 'spots' && !isset($_GET['search'])) :?>
-                                 
+                                    <!-- Individual comment (without search) -->
                                     <div class="onecom">
                                         <div class="pseudlike">
+                                            <!-- Comment sender -->
                                             <span id="who">
                                                 <?php echo $comment['sender'];?>
                                             </span>
+                                            <!-- Like button -->
                                             <span id="likes">
 
                                             <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
@@ -208,7 +227,7 @@
                                                 <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
                                             <?php endif;?>
-
+                                             <!-- Like/unlike button -->
                                             <form action="like.php" method="post">
                                                 <?php foreach ($likes as $like) :?>
                                                 <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
@@ -218,11 +237,12 @@
                                                 <?php endif?>
                                                 <?php endforeach?>
                                             </form>
-                                            
+                                            <!-- Number of likes -->
                                             <button class="empty"></button>
                                             <span class="likenb"><?php echo $comment['likes'];?></span>
                                             </span>
                                         </div>
+                                        <!-- Comment content -->
                                         <span id="com">
                                                 <?php echo $comment['content'];?>
                                         </span>
@@ -233,81 +253,99 @@
 
                             </div>
 
+                        <!-- Form for submitting a new comment -->                            
                         <form action="comments.php" method="post">
                             <textarea maxlength="500" class="txtblog" id="txtspots" type="text" name="commoroccospots"></textarea>
                             <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
                     </div>
-
-                    <div class="section dishes">
-                         <h3>Dishes</h3>
-                            <div class="blog" id="dishes">
-                                    
+                    
+                    <!-- Section for displaying comments related to restaurants -->
+                    <div class="section restaurants">
+                         <h3>Restaurants</h3>
+                            <!-- Container for displaying blog comments related to restaurants -->
+                            <div class="blog" id="restaurants">  
+                            <!-- PHP loop to iterate over each comment -->
                             <?php foreach ($comments as $comment) :
-                                    if ($comment['category'] == 'dishes' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
-                                 
+                                    if ($comment['category'] == 'restaurants' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
+                                     <!-- Container for displaying each individual comment -->
                                     <div class="onecom">
+                                        <!-- Container for pseudonym and like buttons -->
                                         <div class="pseudlike">
+                                            <!-- Display sender's pseudonym -->
                                             <span id="who">
                                                 <?php echo $comment['sender'];?>
                                             </span>
+                                             <!-- Like buttons and delete button (if logged in user is the sender or has admin privileges) -->
                                             <span id="likes">
 
                                             <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
-                                                <button class="btndel dishes" type="submit" name="delcomdishes" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                <button class="btndel restaurants" type="submit" name="delcomrestaurants" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
                                             <?php endif;?>
-
+                                                 <!-- Like buttons -->
                                             <form action="like.php" method="post">
                                                 <?php foreach ($likes as $like) :?>
                                                 <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <!-- Unlike button (filled heart) if the user has already liked the comment -->
                                                     <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
                                                 <?php else :?>
+                                                    <!-- Like button (empty heart) if the user hasn't liked the comment -->
                                                     <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
                                                 <?php endif?>
                                                 <?php endforeach?>
                                             </form>
-                                            
+                                            <!-- Empty button (placeholder for alignment) -->
                                             <button class="empty"></button>
+                                            <!-- Display number of likes for the comment -->
                                             <span class="likenb"><?php echo $comment['likes'];?></span>
                                             </span>
                                         </div>
+                                            <!-- Display comment content with highlighted search term -->
                                             <span id="com">
                                                 <?php echo str_replace($_GET['search'],'<mark>'.$_GET['search'].'</mark>',$comment['content']);?>
                                             </span>
                                     </div>
-
-                                    <?php elseif ($comment['category'] == 'dishes' && !isset($_GET['search'])) :?>
-                                 
+                                    <!-- Check if the comment belongs to the 'restaurants' category and if search query is not set -->
+                                    <?php elseif ($comment['category'] == 'restaurants' && !isset($_GET['search'])) :?>
+                                    <!-- Container for displaying each individual comment -->
                                     <div class="onecom">
+                                        <!-- Container for pseudonym and like buttons -->
                                         <div class="pseudlike">
+                                            <!-- Display sender's pseudonym -->
                                             <span id="who">
                                                 <?php echo $comment['sender'];?>
                                             </span>
+                                            <!-- Like buttons and delete button (if logged in user is the sender or has admin privileges) -->
                                             <span id="likes">
 
                                             <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
-                                                <button class="btndel dishes" type="submit" name="delcomdishes" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                <!-- Delete comment button -->
+                                                <button class="btndel restaurants" type="submit" name="delcomrestaurants" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
                                             <?php endif;?>
-
+                                            <!-- Like buttons -->
                                             <form action="like.php" method="post">
                                                 <?php foreach ($likes as $like) :?>
                                                 <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <!-- Unlike button (filled heart) if the user has already liked the comment -->
                                                     <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
                                                 <?php else :?>
+                                                    <!-- Like button (empty heart) if the user hasn't liked the comment -->
                                                     <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
                                                 <?php endif?>
                                                 <?php endforeach?>
                                             </form>
-                                            
+                                            <!-- Empty button (placeholder for alignment) -->
                                             <button class="empty"></button>
+                                            <!-- Display number of likes for the comment -->
                                             <span class="likenb"><?php echo $comment['likes'];?></span>
                                             </span>
                                         </div>
+                                        <!-- Display comment content -->
                                         <span id="com">
                                                 <?php echo $comment['content'];?>
                                         </span>
@@ -317,82 +355,107 @@
                                 <?php endforeach?>
 
                             </div>
-
+                        <!-- Form for adding a new comment related to restaurants -->
                         <form action="comments.php" method="post">
-                            <textarea maxlength="500" class="txtblog" id="txtdishes" type="text" name="commoroccodishes"></textarea>
-                            <div class="btnsize sizedishes"><img src="../source/openicon.png" alt="openicon"></div>
-                            <button type="submit" class="btnblog" id="btndishes" >Send</button>
+                             <!-- Textarea for entering the new comment -->
+                            <textarea maxlength="500" class="txtblog" id="txtrestaurants" type="text" name="commoroccorestaurants"></textarea>
+                            <!-- Button for expanding the textarea (optional) -->
+                            <div class="btnsize sizerestaurants"><img src="../source/openicon.png" alt="openicon"></div>
+                            <!-- Button for submitting the new comment -->
+                            <button type="submit" class="btnblog" id="btnrestaurants" >Send</button>
                         </form>
                     </div>
                     
+                    <!-- Section for displaying comments related to activities -->
                     <div class="section activities">
                          <h3>Activities</h3>
+                            <!-- Container for displaying blog comments related to activities -->
                             <div class="blog" id="activities">
-                                    
+                            <!-- PHP loop to iterate over each comment -->
                             <?php foreach ($comments as $comment) :
+                                    // Check if the comment belongs to the 'activities' category and if search query is set
                                     if ($comment['category'] == 'activities' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
-                                 
+                                    <!-- Container for displaying each individual comment -->
                                     <div class="onecom">
+                                        <!-- Container for pseudonym and like buttons -->
                                         <div class="pseudlike">
+                                            <!-- Display sender's pseudonym -->
                                             <span id="who">
                                                 <?php echo $comment['sender'];?>
                                             </span>
+                                            <!-- Like buttons and delete button (if logged in user is the sender or has admin privileges) -->
                                             <span id="likes">
 
                                             <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
+                                                <!-- Delete comment button -->
                                                 <button class="btndel activities" type="submit" name="delcomactivities" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
                                             <?php endif;?>
-
+                                            
+                                            <!-- Like buttons -->
                                             <form action="like.php" method="post">
                                                 <?php foreach ($likes as $like) :?>
                                                 <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <!-- Unlike button (filled heart) if the user has already liked the comment -->
                                                     <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
                                                 <?php else :?>
+                                                    <!-- Like button (empty heart) if the user hasn't liked the comment -->
                                                     <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
                                                 <?php endif?>
                                                 <?php endforeach?>
                                             </form>
-                                            
+                                            <!-- Empty button (placeholder for alignment) -->
                                             <button class="empty"></button>
+                                            <!-- Display number of likes for the comment -->
                                             <span class="likenb"><?php echo $comment['likes'];?></span>
                                             </span>
                                         </div>
+                                            <!-- Display comment content with highlighted search term -->
                                             <span id="com">
                                                 <?php echo str_replace($_GET['search'],'<mark>'.$_GET['search'].'</mark>',$comment['content']);?>
                                             </span>
                                     </div>
-
+                                    
+                                    <!-- // Check if the comment belongs to the 'activities' category and if search query is not set -->
                                     <?php elseif ($comment['category'] == 'activities' && !isset($_GET['search'])) :?>
-                                 
+                                    <!-- Container for displaying each individual comment -->
                                     <div class="onecom">
+                                        <!-- Container for pseudonym and like buttons -->
                                         <div class="pseudlike">
+                                            <!-- Display sender's pseudonym -->
                                             <span id="who">
+                                                <!-- Like buttons and delete button (if logged in user is the sender or has admin privileges) -->
                                                 <?php echo $comment['sender'];?>
                                             </span>
                                             <span id="likes">
 
                                             <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
+                                                <!-- Delete comment button -->
                                                 <button class="btndel activities" type="submit" name="delcomactivities" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
                                             <?php endif;?>
-
+                                            <!-- Like buttons -->
                                             <form action="like.php" method="post">
                                                 <?php foreach ($likes as $like) :?>
                                                 <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <!-- Unlike button (filled heart) if the user has already liked the comment -->
                                                     <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
                                                 <?php else :?>
+                                                    <!-- Like button (empty heart) if the user hasn't liked the comment -->
                                                     <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
                                                 <?php endif?>
                                                 <?php endforeach?>
                                             </form>
                                             
+                                            <!-- Empty button (placeholder for alignment) -->
                                             <button class="empty"></button>
+                                            <!-- Display number of likes for the comment -->
                                             <span class="likenb"><?php echo $comment['likes'];?></span>
                                             </span>
                                         </div>
+                                        <!-- Display comment content -->
                                         <span id="com">
                                                 <?php echo $comment['content'];?>
                                         </span>
@@ -402,15 +465,19 @@
                                 <?php endforeach?>
 
                             </div>
-
+                        <!-- Form for adding a new comment related to activities -->
                         <form action="comments.php" method="post">
+                             <!-- Textarea for entering the new comment -->
                             <textarea maxlength="500" class="txtblog" id="txtactivities" type="text" name="commoroccoactivities"></textarea>
+                            <!-- Button for expanding the textarea (optional) -->
                             <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
+                             <!-- Button for submitting the new comment -->
                             <button type="submit" class="btnblog" id="btnactivities" >Send</button>
                         </form>
                     </div>
                 </div>
-
+                                                
+                <!-- Heading for rating section -->
                 <h3 id="ratetxt">Rate your experience in Morocco : </h3>
 
                 <?php 
@@ -425,32 +492,44 @@
                     
                     if ($found) :?>
 
+                <!-- Form for updating the rating -->
                 <form class="rating" action="like.php" method="post">
+                        <!-- // Display stars based on the user's rating -->
                         <?php if($grade == 5) :?>
+                             <!-- 5 stars -->
+                            <!-- Each star button with a yellow rectangle indicating filled star -->
                             <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect_" id="five_">  </button></div>
                         <?php elseif($grade == 4) :?>
+                            <!-- 4 stars -->
+                            <!-- All stars filled until the 4th star -->
                             <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect_" id="four_">  </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
                         <?php elseif($grade == 3) :?>
+                            <!-- 3 stars -->
+                            <!-- All stars filled until the 3rd star -->
                             <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect_" id="three_"></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
                         <?php elseif($grade == 2) :?>
+                            <!-- 2 stars -->
+                            <!-- All stars filled until the 2nd star -->
                             <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect_" id="two_">    </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect" id="three_"></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfour" class="star four"><div class="yellowrect" id="four_">  </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starfive" class="star five"><div class="yellowrect" id="five_">  </button></div>
                         <?php elseif($grade == 1) :?>
+                            <!-- 1 stars -->
+                            <!-- All stars filled until the 2nd star -->
                             <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect_" id="one_" ></button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect" id="two_">    </button></div>
                             <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect" id="three_"></button></div>
@@ -460,8 +539,9 @@
                 </form>
 
                 <?php else :?>
-
+                
                 <form class="rating" action="like.php" method="post">
+                    <!-- Star rating form -->
                         <div class="starborder"><button type="submit" value="morocco" name="starone" class="star one"><div class="yellowrect" id="one" ></button></div>
                         <div class="starborder"><button type="submit" value="morocco" name="startwo" class="star two"><div class="yellowrect" id="two">    </button></div>
                         <div class="starborder"><button type="submit" value="morocco" name="starthree" class="star three"><div class="yellowrect" id="three"></button></div>
@@ -472,6 +552,7 @@
                 
                 <h2 id="average">
                     <?php
+                     // Calculating the average rating for Morocco
                         $av = 0;
                         $count = 0;
                         foreach ($ratings as $rating) {
@@ -491,7 +572,8 @@
                 </h2>
             </div>
     </main>
-
+    
+     <!-- Inclusion of the footer.php file with the require_once function the absolute path -->
     <?php require_once(__DIR__."/footer.php") ?> 
 </body>
 

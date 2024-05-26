@@ -1,3 +1,4 @@
+/* Style for the background video */
 #bgvideo {
     position: relative;
     object-fit: cover;
@@ -12,6 +13,7 @@
     cursor: pointer;
 }
 
+/* Style for the play/pause button */
 #playpausebtn {
     position: fixed;
     top: 50%;
@@ -29,6 +31,7 @@
     align-items: center;
 }
 
+/* Style for the play/pause icon inside the button */
 #playpausebtn span {
     position: absolute;
     left: 50%;
@@ -36,6 +39,7 @@
     transform: translate(-52%, -52%);
 }
 
+/* Styles for the main content */
 main {
     display: flex;
     align-items: center;
@@ -44,6 +48,7 @@ main {
     height: 100vh;
 }
 
+/* Styles for the container holding the form */
 .container {
     background-color: whitesmoke;
     border-radius: 2.7vw;
@@ -55,11 +60,13 @@ main {
     min-height: 67vh;
 }
 
+/* Styles for headings */
 h1 {
     font-size: 2.5vw;
     text-align: center;
 }
 
+/* Styles for paragraphs */
 .container p {
     font-size: 1vw;
     line-height: 1vw;
@@ -67,12 +74,14 @@ h1 {
     margin: 1vw 0;
 }
 
+/* Styles for spans */
 .container span{
     font-size: 1vw;
     text-align: center;
     margin-bottom: 2vw;
 }
 
+/* Styles for buttons */
 .container button {
     background-color: rgb(29, 147, 113);
     color: whitesmoke;
@@ -87,11 +96,13 @@ h1 {
     cursor: pointer;
 }
 
+/* Styles for hidden buttons */
 .container button.hidden{
     background-color: transparent;
     border-color: whitesmoke;
 }
 
+/* Styles for forms */
 .container form {
     background-color: whitesmoke;
     display: flex;
@@ -102,6 +113,7 @@ h1 {
     height: 100%;
 }
 
+/* Styles for input fields */
 .container input {
     background-color: rgb(219, 219, 219);
     border: none;
@@ -113,6 +125,7 @@ h1 {
     outline: none;
 }
 
+/* Styles for the form container */
 .form-container{
     position: absolute;
     top: 0;
@@ -120,16 +133,19 @@ h1 {
     transition: all 0.6s ease-in-out;
 }
 
+/* Styles for sign-in panel */
 .sign-in {
     left: 0;
     width: 50%;
     z-index: 2;
 }
 
+/* When the sign-in container is active, move it to the right to hide it */
 .container.active .sign-in {
     transform: translateX(100%);
 }
 
+/* Styles for the sign-up container */
 .sign-up {
     left: 0;
     width: 50%;
@@ -137,6 +153,7 @@ h1 {
     z-index: 1;
 }
 
+/* When the sign-up container is active, move it to the right to display it */
 .container.active .sign-up {
     transform: translateX(100%);
     opacity: 1;
@@ -144,6 +161,7 @@ h1 {
     animation: move 0.6s;
 }
 
+/* Keyframes animation for opacity and z-index */
 @keyframes move {
     0%, 49.99%{
         opacity: 0;
@@ -155,6 +173,7 @@ h1 {
     }
 }
 
+/* Styles for the toggle container */
 .toggle-container {
     position: absolute;
     top: 0;
@@ -167,11 +186,13 @@ h1 {
     z-index: 4;
 }
 
+/* When the sign-up container is active, move the toggle container to the left */
 .container.active .toggle-container {
     transform: translateX(-100%);
     border-radius: 0 7.8vw 5.2vw 0;
 }
 
+/* Styles for the toggle button */
 .toggle{
     background-color: rgb(29, 147, 113);
     height: 100%;
@@ -184,10 +205,12 @@ h1 {
     transition: all 0.6s ease-in-out;
 }
 
+/* When the sign-up container is active, move the toggle to the center */
 .container.active .toggle {
     transform: translateX(50%);
 }   
 
+/* Styles for the toggle panel */
 .toggle-panel{
     position: absolute;
     width: 50%;
@@ -202,20 +225,24 @@ h1 {
     transition: all 0.6s ease-in-out;
 }
 
+/* Styles for the toggle on the left side */
 .toggle-left {
     left: -2vw;
     transform: translateX(-200%);
 }
 
+/* When the sign-up container is active, move the toggle to the center */
 .container.active .toggle-left {
     transform: translateX(0);
 }
 
+/* Styles for the toggle on the right side */
 .toggle-right {
     right: -2vw;
     transform: translateX(0);
 }
 
+/* When the sign-up container is active, move the toggle to the right */
 .container.active .toggle-right {
     transform: translateX(200%);
 }

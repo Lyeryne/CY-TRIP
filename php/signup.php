@@ -3,6 +3,7 @@
 
     require_once(__DIR__."/sqlconfig.php");
 
+    // Check if the email already exists in the database
     $sqlQuery = 'SELECT * FROM users';
     $userstatement = $mysqlClient->prepare($sqlQuery);
     $userstatement->execute();
@@ -12,11 +13,12 @@
     {
         if ($user['user_email'] == $_POST['user_email'])
         {
-            header("Location: login_signup.php?error=zxfvwll22_6c"); // email already exist error
+            header("Location: login_signup.php?error=zxfvwll22_6c"); // Redirect with email already exists error
             exit();
         }
     }
     
+    // Create the new account if email doesn't exist
     $createaccount = $mysqlClient->prepare('INSERT INTO users(user_name, isroot, user_email, user_password) VALUES (:user_name, :isroot, :user_email, :user_password)');
     $createaccount->execute([
         'user_name'=> $_POST['user_name'],
@@ -25,5 +27,6 @@
         'user_password'=> $_POST['user_password'],
     ]);
 
-    header("Location: login_signup.php?error=zxfvwll22_6d"); // account created succesfully
+    // Redirect with account created successfully message
+    header("Location: login_signup.php?error=zxfvwll22_6d");
 ?>
