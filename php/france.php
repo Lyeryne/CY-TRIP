@@ -59,7 +59,7 @@
                     <img id="countryico" src="../source/frenchguy.png" alt="countryico">
             </div>
 
-            <div class="advicezone">
+        <div class="advicezone">
             <h3 id=advicetitle>Our Advices</h3> <br>
 
             <div class="advice1">
