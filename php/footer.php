@@ -8,5 +8,5 @@
         <a target="_blank" href="mailto:aymanouguerd@gmail.com" id="nametext" type="us">Ayman Ouguerd</a>
     </div>
 
-    <a href="https://cytech.cyu.fr"><img id="cylogo" src="/source/cytech.png" alt=""></a>
+    <a target="_blank" href="https://cytech.cyu.fr"><img id="cylogo" src="/source/cytech.png" alt=""></a>
 </footer>

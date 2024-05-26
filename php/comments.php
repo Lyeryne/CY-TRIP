@@ -1,14 +1,10 @@
 <?php 
     session_start();
+?>
 
-    try
-    {
-        $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-        die('Erreur : ' . $e->getMessage());
-    }
+<?php require_once(__DIR__."/sqlconfig.php") ?>
+
+<?php
 
     if (isset($_POST['comfrancespots'])) {
         $addcom = $mysqlClient->prepare('INSERT INTO comments(sender, country, category, content) VALUES (:sender, :country, :category, :content)');
@@ -134,6 +130,6 @@
     }
 
 
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: ' . $_SERVER['HTTP_REFERER'].'#hubtitle');
     exit();
 ?>

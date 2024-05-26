@@ -1,14 +1,10 @@
 <?php 
     session_start();
+?>
 
-    try
-    {
-        $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-        die('Erreur : ' . $e->getMessage());
-    }
+<?php require_once(__DIR__."/sqlconfig.php") ?>
+
+<?php
 
     $commentstatement = $mysqlClient->prepare('SELECT * FROM comments WHERE country = "france" ORDER BY likes DESC');
     $commentstatement->execute();
@@ -79,7 +75,7 @@
                     </div>
 
                     <div class="cytech">
-                        <img id="imgcytech" src="../source/siteducaca.png" alt="site du parc">
+                        <img id="imgcytech" src="../source/siteduparc.png" alt="site du parc">
                         <p id="titlecytech">CY TECH</p>
                         <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
                         <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
@@ -106,7 +102,7 @@
                     </div>
 
                     <div class="cytech">
-                        <img id="imgcytech" src="../source/siteducaca.png" alt="site du parc">
+                        <img id="imgcytech" src="../source/siteduparc.png" alt="site du parc">
                         <p id="titlecytech">CY TECH</p>
                         <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
                         <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
@@ -133,7 +129,7 @@
                     </div>
 
                     <div class="cytech">
-                        <img id="imgcytech" src="../source/siteducaca.png" alt="site du parc">
+                        <img id="imgcytech" src="../source/siteduparc.png" alt="site du parc">
                         <p id="titlecytech">CY TECH</p>
                         <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
                         <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
@@ -167,7 +163,7 @@
                                             </span>
                                             <span id="likes">
 
-                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
                                                 <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
@@ -218,7 +214,7 @@
                                             </span>
                                             <span id="likes">
 
-                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
                                                 <button class="btndel dishes" type="submit" name="delcomdishes" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>
@@ -269,7 +265,7 @@
                                             </span>
                                             <span id="likes">
 
-                                            <?php if($comment["sender"] == $_SESSION['user']['user_name']): ?>
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
                                                 <form action="comments.php" method="post">
                                                 <button class="btndel activities" type="submit" name="delcomactivities" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
                                                 </form>

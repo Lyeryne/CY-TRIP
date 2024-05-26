@@ -50,134 +50,19 @@ main {
     box-shadow: 0 0.3vw 0.9vw rgba(0,0,0,0.35) ;
     position: relative;
     overflow: hidden;
-    width: 60vw;
+    width: 90vw;
     max-width: 100%;
     min-height: 67vh;
     display: flex;
-}
-
-#logoutbtn {
-    background-color: rgb(29, 147, 113);
-    color: whitesmoke;
-    font-size: 1vw;
-    padding: 0.52vw 2.35vw;
-    border: 0.1vw solid transparent;
-    border-radius: 0.4vw;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 2vw;
-    cursor: pointer;
-    position: absolute;
-    right: 2vw;
-    bottom: 1vw;
-}
-
-#adminbtn {
-    background-color: rgb(29, 147, 113);
-    color: whitesmoke;
-    font-size: 1vw;
-    padding: 0.52vw 2.35vw;
-    border: 0.1vw solid transparent;
-    border-radius: 0.4vw;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 2vw;
-    cursor: pointer;
-    position: absolute;
-    right: 15vw;
-    bottom: 1vw;
-}
-
-#form_user_info {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 1%;
-    top: 2.5%;
-    height: 30%;
-    width: 43%;
-    border: solid rgb(29, 147, 113) 0.2vw;
-    border-radius: 0.9vw;
-    gap: 0.5vw;
-    overflow: hidden;
-}
-
-.infos {
-    background-color: whitesmoke;
-    border: none;
-    color: black;
-    position: relative;
-    top: 2.5vw;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.email {
-    font-size: 1vw;
-    left: 6vw;
-    max-width: 19.5vw;
-}
-
-.password {
-    font-size: 1vw;
-    left: 7.5vw;
-    max-width: 14vw;
-}
-
-.pseudo {
-    font-size: 2vw;
-    left: 2vw;
-    max-width: 23.5vw;
-}
-
-.emaillabel {
-    position: absolute;
-    font-size: 0.75vw;
-    top: 5.7vw;
-    left: 3vw;
-}
-
-.passwordlabel {
-    position: absolute;
-    font-size: 0.75vw;
-    top: 7.2vw;
-    left: 3vw;
-}
-
-button img {
-    width: 2vw;
-}
-
-#form_user_info button {
-    width: 1.5vw;
-    background-color: whitesmoke;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 1.5vw;
-    bottom: 0.5vw;
-}
-
-#edit {
-    position: absolute;
-    width: 1.5vw;
-    background-color: whitesmoke;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 8.2vw;
-    left: 23.75vw;
 }
 
 .blog {
     position: absolute;
     border-radius: 0.7vw;
     top: 15%;
-    right: 4.5%;
-    width: 25vw;
-    height: 23vw;
+    left: 2.5%;
+    width: 20vw;
+    height: 26vw;
     border: solid black 0.2vw;
     background-color: white;
     display: flex;
@@ -186,6 +71,55 @@ button img {
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
 }
+
+.bloglikes {
+    position: absolute;
+    border-radius: 0.7vw;
+    top: 15%;
+    left: 26.5%;
+    width: 20vw;
+    height: 26vw;
+    border: solid black 0.2vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+}
+
+.blogrates {
+    position: absolute;
+    border-radius: 0.7vw;
+    top: 15%;
+    left: 50.5%;
+    width: 20vw;
+    height: 26vw;
+    border: solid black 0.2vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+}
+
+.blogusers {
+    position: absolute;
+    border-radius: 0.7vw;
+    top: 15%;
+    left: 74.5%;
+    width: 20vw;
+    height: 26vw;
+    border: solid black 0.2vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
+}
+
 
 .txtblog {
     position: absolute;
@@ -288,7 +222,7 @@ button img {
 }
 
 #com {
-    width: 11vw;
+    width: 6.5vw;
     margin-top: 0.5vw;
     font-weight: 450;
     overflow-wrap: break-word;
@@ -324,12 +258,36 @@ button img {
     font-size: 0.9vw;
 }
 
-#yourcoms {
+#allcoms {
     font-size: 2vw;
     color: rgb(29, 147, 113);
     position: absolute;
     top: 5%;
-    left: 60%;
+    left: 6%;
+}
+
+#alllikes {
+    font-size: 2vw;
+    color: rgb(29, 147, 113);
+    position: absolute;
+    top: 5%;
+    left: 34%;
+}
+
+#allrates {
+    font-size: 2vw;
+    color: rgb(29, 147, 113);
+    position: absolute;
+    top: 5%;
+    left: 57%;
+}
+
+#allusers {
+    font-size: 2vw;
+    color: rgb(29, 147, 113);
+    position: absolute;
+    top: 5%;
+    left: 81%;
 }
 
 .stats h1 {
@@ -385,73 +343,4 @@ button img {
     top: 10%;
     margin-left: 2.5%;
     font-size: 1vw;
-}
-
-.ratings {
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    min-height: 8vw;
-    scrollbar-width: thin;
-    scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);
-    margin-top: -2.5vw;
-    width: 20vw;
-}
-
-.ratings span {
-    position: relative;
-    font-size: 1vw;
-    top: 1%;
-    margin-left: 4.5%;
-    left: -0.3vw;
-}
-
-.ratings img {
-    width: 2vw;
-    margin-top: 2.5%;
-    margin-left: 2.5%;
-    margin-right: 0.5vw;
-}
-
-.star {
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    width: 1.6vw;
-    height: 1.6vw;
-    top: 0.2vw;
-    left: 0.2vw;
-    position: relative;
-    background-color: whitesmoke;
-}
-
-.starborder {
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    width: 2vw;
-    height: 2vw;
-    margin-top: 0.55vw;
-    margin-left: 0.2vw;
-    background-color: black;
-}
-
-.yellowrect {
-    position: relative;
-    width: 2vw;
-    height: 2vw;
-    background-color: rgb(254, 206, 0);
-    right: 2vw;
-    bottom: 0.1vw;
-    transition: transform 0.5s ease;
-}
-
-.yellowrect_ {
-    position: relative;
-    width: 2vw;
-    height: 2vw;
-    background-color: rgb(254, 206, 0);
-    bottom: 0.1vw;
-}
-
-.single {
-    display: flex;
-    flex-direction: row;
 }

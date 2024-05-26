@@ -1,14 +1,10 @@
 <?php 
     session_start();
+?>
 
-    try
-    {
-        $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-        die('Erreur : ' . $e->getMessage());
-    }
+<?php require_once(__DIR__."/sqlconfig.php") ?>
+
+<?php
 
     $userstatement = $mysqlClient->prepare('SELECT * FROM users');
     $userstatement->execute();
@@ -59,7 +55,7 @@
             </video>
             <div id="playpausebtn"><span>&#9658;</span></div>
             
-            <div class="container" id="container">
+            <div class="container">
                 <?php 
                     foreach ($users as $user) {
                         if ($user["id"] == $_SESSION["user"]["id"]) {
@@ -176,13 +172,21 @@
                                 <?php echo $comment['content'];?>
                             </span>
                             <span id="loc">
-                                <?php echo "In ".$comment['country'];?>
-                                <?php echo $comment['category'];?>
+                            <a href="<?php echo $comment['country'].".php"."#hubtitle"; ?>">
+                                    <?php echo "In ".$comment['country'];?>
+                                    <?php echo $comment['category'];?>
+                                </a>
                             </span>
                         </div>
 
                     <?php endforeach?>
                 </div>
+                
+                <?php if ($_SESSION['user']['isroot'] == 1): ?>
+                    <form method="post" action="admin.php">
+                        <button id="adminbtn" type="submit">Admin mode</button>
+                    </form>
+                <?php endif;?>
 
                 <form method="post" action="logout.php">
                     <button id="logoutbtn" type="submit">Disconnect</button>

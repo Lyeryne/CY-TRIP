@@ -40,7 +40,7 @@
                             <span>use your email, username and password to register</span>
                         <?php endif;?>
 
-                        <input type="text" placeholder="Username" name="user_name" maxlength="19">
+                        <input type="text" placeholder="Username" name="user_name" maxlength="7">
                         <input type="email" placeholder="Email" name="user_email">
                         <input type="password" placeholder="Password" name="user_password">
                         <button type="submit">Sign Up</button>

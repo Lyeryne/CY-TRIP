@@ -1,14 +1,10 @@
 <?php 
     session_start();
+?>
 
-    try
-    {
-        $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-        die('Erreur : ' . $e->getMessage());
-    }
+<?php require_once(__DIR__."/sqlconfig.php") ?>
+
+<?php
 
     $ratingstatement = $mysqlClient->prepare('SELECT * FROM ratings');
     $ratingstatement->execute();
@@ -41,8 +37,37 @@
             'comment_id' => $_POST['disliked'],
         ]);
     }
+    elseif (isset($_POST['dellike'])) {
+        $delcom = $mysqlClient->prepare('DELETE FROM likes WHERE user_id = :user_id AND comment_id = :comment_id');
 
-    
+        $tmp = explode('_', $_POST['dellike']);
+        $user_id = $tmp[0];
+        $comment_id = $tmp[1];
+
+        $delcom->execute([
+            'user_id'=> $user_id,
+            'comment_id'=> $comment_id,
+        ]);
+    }
+    elseif (isset($_POST['delrate'])) {
+        $delrate = $mysqlClient->prepare('DELETE FROM ratings WHERE liker_id = :liker_id AND country = :country');
+
+        $tmp = explode('_', $_POST['delrate']);
+        $liker_id = $tmp[0];
+        $country = $tmp[1];
+
+        $delrate->execute([
+            'liker_id'=> $liker_id,
+            'country'=> $country,
+        ]);
+    }
+    elseif (isset($_POST['deluser'])) {
+        $deluser = $mysqlClient->prepare('DELETE FROM users WHERE id = :id');
+
+        $deluser->execute([
+            'id'=> $_POST['deluser'],
+        ]);
+    }
 
     if (isset($_POST['starone'])) {
         $found = false;
@@ -179,6 +204,6 @@
         ]);
     }
 
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: ' . $_SERVER['HTTP_REFERER'].'#hubtitle');
     exit();
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 25 mai 2024 à 02:16
+-- Généré le : sam. 25 mai 2024 à 23:10
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -41,14 +41,21 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `sender`, `country`, `likes`, `category`, `content`) VALUES
-(8, 'NayJi7', 'france', 3, 'spots', 'test\r\n'),
-(9, 'NayJi7', 'france', 0, 'activities', 'hihi\r\n'),
-(10, 'NayJi7', 'france', 0, 'activities', 'haha'),
-(11, 'mjidoug', 'france', 1, 'dishes', 'vrimon bonne'),
-(12, 'mjidoug', 'spain', 1, 'spots', 'qué tal'),
-(13, 'mjidoug', 'spain', 0, 'dishes', 'yeeha'),
+(9, 'NayJi7', 'france', 3, 'activities', 'hihi\r\n'),
+(10, 'NayJi7', 'france', 1, 'activities', 'haha'),
+(11, 'mjidoug', 'france', 4, 'dishes', 'vrimon bonne'),
+(12, 'mjidoug', 'spain', 2, 'spots', 'qué tal'),
+(13, 'mjidoug', 'spain', 1, 'dishes', 'yeeha'),
 (14, 'mjidoug', 'spain', 0, 'activities', 'ui'),
-(15, 'mjidoug', 'morocco', 1, 'activities', '3la slamtkoum');
+(15, 'mjidoug', 'morocco', 1, 'activities', '3la slamtkoum'),
+(16, 'NayJi7', 'france', 2, 'spots', 'lalala'),
+(18, 'mjidoug', 'france', 1, 'dishes', 'lala'),
+(19, 'mjidoug', 'france', 1, 'dishes', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
+(20, 'aaaa', 'france', 0, 'activities', 'les delices hehe'),
+(22, 'NayJi7', 'spain', 0, 'spots', 'hehe\r\n'),
+(23, 'NayJi7', 'spain', 0, 'dishes', 'miam miam'),
+(24, 'NayJi7', 'spain', 0, 'activities', 'lolilol'),
+(25, 'mjidoug', 'spain', 1, 'activities', 'tfou les espagne ça pue di fesses');
 
 -- --------------------------------------------------------
 
@@ -71,9 +78,19 @@ INSERT INTO `likes` (`user_id`, `comment_id`) VALUES
 (1, 3),
 (1, 8),
 (2, 5),
-(2, 11),
 (2, 12),
-(2, 15);
+(2, 15),
+(1, 11),
+(2, 19),
+(11, 11),
+(1, 9),
+(1, 10),
+(1, 9),
+(1, 9),
+(2, 25),
+(2, 13),
+(2, 12),
+(2, 11);
 
 -- --------------------------------------------------------
 
@@ -92,11 +109,14 @@ CREATE TABLE `ratings` (
 --
 
 INSERT INTO `ratings` (`liker_id`, `country`, `grade`) VALUES
-(1, 'france', 3),
 (3, 'france', 1),
+(1, 'france', 4),
+(1, 'morocco', 3),
 (2, 'france', 5),
-(2, 'spain', 3),
-(2, 'morocco', 2);
+(11, 'france', 5),
+(1, 'spain', 5),
+(2, 'morocco', 5),
+(2, 'spain', 1);
 
 -- --------------------------------------------------------
 
@@ -118,7 +138,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_password`) VALUES
 (1, 'NayJi7', 'nayji@exemple.com', 'mdp'),
 (2, 'mjidoug', 'mjidoug@maroc.ma', 'youyou'),
-(3, 'ayman', 'aplus@lol', 'a');
+(3, 'ayman', 'aplus@lol', 'a'),
+(10, 'abdelah', 'delice@evy', 'miam'),
+(11, 'aaaa', 'aaa@aaa', 'aaa'),
+(12, 'mmmmmmmmmmmmmmmmmmm', 'long@long', 'long');
 
 --
 -- Index pour les tables déchargées
@@ -144,13 +167,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

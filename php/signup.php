@@ -1,15 +1,10 @@
-<?php
-
+<?php 
     session_start();
+?>
 
-    try
-    {
-        $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cy-trip;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-        die('Erreur : ' . $e->getMessage());
-    }
+<?php require_once(__DIR__."/sqlconfig.php") ?>
+
+<?php
 
     $sqlQuery = 'SELECT * FROM users';
     $userstatement = $mysqlClient->prepare($sqlQuery);
