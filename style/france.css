@@ -127,7 +127,18 @@
     margin-left: 53vw;
 }
 
-#titlecytech{
+#titlecedric{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    text-align: center;
+    width: 30vw;
+    margin-top: 3vw;
+    margin-left: 44vw;
+}
+
+#titlecytech, #titlenachitos{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(29, 147, 113);
     font-size: 1.7vw;
@@ -148,7 +159,48 @@
     margin-left: 53vw;
 }
 
-#descripttower {
+#titlegrenouille{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 40vw;
+    margin-top: 3vw;
+    margin-left: 41vw;
+}
+
+#titledisney{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 35vw;
+    margin-top: 5vw;
+    margin-left: 12vw;
+}
+
+#titlepeniche{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 47vw;
+    width: 30vw;
+}
+
+#titlecourchevel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 45vw;
+    margin-top: 3vw;
+    margin-left: 37vw;
+}
+
+#descripttower, #descriptpeniche, #descriptgrenouille {
     text-align: justify;
     font-size: 1.4vw;
     width: 60vw;
@@ -164,7 +216,7 @@
     margin-left: -2vw;
 }
 
-#descriptport{
+#descriptport, #descriptcourchevel{
     text-align: justify;
     font-size: 1.4vw;
     width: 60vw;
@@ -172,7 +224,15 @@
     margin-left: 29vw;
 }
 
-.effeltower > p{
+#descriptdisney{
+    text-align: justify;
+    font-size: 1.4vw;
+    width: 60vw;
+    margin-top: 2vh;
+    margin-left: -2vw;
+}
+
+.area_spots_one > p, .area_dishes_one > p, .area_activities_one > p{
     margin-top: 2vh;
     font-size: 1.4vw;
 }
@@ -206,7 +266,16 @@
     height: 23vw;
 }
 
-#adresstower:hover, #adresscytech:hover, #adressport:hover{
+#adressdisney{
+    position: relative;
+    margin-right: 35vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+    height: 23vw;
+}
+
+#adresstower:hover, #adresscytech:hover, #adressport:hover, #adressdisney:hover{
     color: rgb(14, 199, 146);
 }
 
@@ -217,6 +286,21 @@
     margin-left: -45vw;
 }
 
+#imgcedric{
+    position: absolute;
+    height: 16vw;
+    margin-top: 3vw;
+    margin-left: -46.8vw;
+}
+
+#imgpeniche{
+    position: absolute;
+    height: 16vw;
+    margin-top: 3vw;
+    margin-left: -45vw;
+    width: 28vw;
+}
+
 #imgcytech{
     position: absolute;
     height: 13.5vw;
@@ -224,11 +308,45 @@
     margin-left: 15vw;
 }
 
+#imgdisney{
+    position: absolute;
+    height: 13.5vw;
+    margin-top: -0.9vw;
+    margin-left: 17vw;
+    width: 27vw;
+    height: 22vh;
+}
+
 #imgport{
+    position: absolute;
+    height: 22vh;
+    margin-top: 2vw;
+    margin-left: -46.5vw;
+    width: 30vw ;
+}
+
+#imggrenouille{
+    position: absolute;
+    height: 13vw;
+    margin-top: -1.5vw;
+    margin-left: -44.5vw;
+    width: 25vw;
+}
+
+#imgcourchevel{
     position: absolute;
     height: 17vw;
     margin-top: -0.5vw;
-    margin-left: -45vw;
+    margin-left: -46.5vw;
+    width: 30vw;
+}
+
+#imgnachitos{
+    position: absolute;
+    height: 15vw;
+    margin-top: -1vw;
+    margin-left: 15vw;
+    width: 30vw;
 }
 
 .blogzone {
@@ -305,27 +423,6 @@
 }
 
 
-/* .advice2 {
-    border: solid rgb(29, 147, 113, 0.6) 0.5vw;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 95vw;
-    margin-left: 2.2vw;
-    margin-top: 10vh;
-    padding-bottom: 4vh;
-} */
-/* .advice3 {
-    border: solid rgb(29, 147, 113, 0.6) 0.5vw;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 95vw;
-    margin-left: 2.2vw;
-    margin-top: 10vh;
-    padding-bottom: 4vh;
-} */
-
 .blog {
     position: absolute;
     border-radius: 0.7vw;
@@ -361,6 +458,44 @@
     transition: height 1s ease;
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);    
+}
+
+.txtsearch {
+    position: relative;
+    top: 2vw;
+    border-radius: 0.7vw;
+    font-size: 1.4vw;
+    justify-content: center;
+    align-items: center;
+    width: 18vw;
+    height: 2vw;
+    border: solid black 0.2vw;
+    padding-left: 1vw;
+    padding-top: 0.6vw;
+    padding-bottom: 0.5vw;
+    padding-right: 1vw;
+    background-color: white;
+    overflow-wrap: break-word;
+    resize: none;
+}
+
+#searchicon {
+    width: 6vw;
+}
+
+#searchbtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8.9vw;
+    left: 60vw;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: none;
+    overflow: hidden;
 }
 
 .btnsize img{
@@ -505,7 +640,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 7vw;
+    margin-top: 4vw;
     margin-left: 15vw;
 }
 

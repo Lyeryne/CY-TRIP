@@ -79,12 +79,14 @@
     color: rgb(29, 147, 113);
     font-size: 2.7vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 1.5vw;
+    top: 10vw;
 }
 
 .descript p{
+    margin-top: 1vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.9vw;
+    font-size: 1.25vw;
+    text-align: justify;
 }
 
 #countryico {
@@ -141,6 +143,265 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.advicezone {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin-top: 35vw;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20vw;
+    gap: 1vw;
+}
+
+#advicetitle{
+    color: rgb(29, 147, 113);
+    font-size: 2.7vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 2vw;
+    margin-bottom: -0.5vw;
+}
+
+#titlemina{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    text-align: center;
+    width: 30vw;
+    margin-top: 3vw;
+    margin-left: 44vw;
+}
+
+#titlebaga, #titleprado, #titlesagrada{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    text-align: center;
+    width: 20vw;
+    margin-top: 6vw;
+    margin-left: 20vw;
+}
+
+#titlealhambra{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 53vw;
+}
+
+#titlearrel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 40vw;
+    margin-top: 3vw;
+    margin-left: 41vw;
+}
+
+#titlesantiago{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 35vw;
+    margin-top: 5vw;
+    margin-left: 43vw;
+}
+
+#titlecaminito{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 15vw;
+    margin-top: 3vw;
+    margin-left: 47vw;
+    width: 30vw;
+}
+
+#titletablao{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 147, 113);
+    font-size: 1.7vw;
+    font-weight: bold;
+    width: 45vw;
+    margin-top: 3vw;
+    margin-left: 37vw;
+}
+
+#descriptalhambra, #descriptcaminito, #descriptarrel, #descripttablao, #descriptsantiago{
+    text-align: justify;
+    font-size: 1.4vw;
+    width: 60vw;
+    margin-top: 2vh;
+    margin-left: 29vw;
+}
+
+#descriptsagrada, #descriptbaga, #descriptprado{
+    text-align: justify;
+    font-size: 1.4vw;
+    width: 60vw;
+    margin-top: 2vh;
+    margin-left: -2vw;
+}
+
+.area_spots_one > p, .area_dishes_one > p, .area_activities_one > p{
+    margin-top: 2vh;
+    font-size: 1.4vw;
+}
+
+#adressalhambra, #adressmina, #adresscaminito{
+    position: relative;
+    top: 1vw;
+    left: 16vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+#adressbaga, #adressprado, #adresssagrada{
+    position: relative;
+    margin-right: 30vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+    height: 23vw;
+}
+
+#adresssantiago, #adressarrel, #adresstablao{
+    position: relative;
+    top: 1vw;
+    right: 2vw;
+    color: rgb(29, 147, 113);
+    text-decoration: none;
+    font-size: 1.5vw;
+    margin-left: 35vw;
+    height: 23vw;
+}
+
+#adressalhambra:hover, #adresssagrada:hover, #adresssantiago:hover, #adressmina:hover, #adressbaga:hover, #adressprado:hover, #adresstablao:hover, #adresscaminito:hover, #adressarrel:hover{
+    color: rgb(14, 199, 146);
+}
+
+#imgefalambra {
+    position: absolute;
+    height: 16vw;
+    margin-top: 3vw;
+    margin-left: -45vw;
+    width: 28vw;
+}
+
+#imgmina{
+    position: absolute;
+    height: 16vw;
+    margin-top: 3vw;
+    margin-left: -46.8vw;
+    width: 30vw;
+}
+
+#imgcaminito{
+    position: absolute;
+    height: 16vw;
+    margin-top: 3vw;
+    margin-left: -46vw;
+    width: 29vw;
+}
+
+#imgsagrada{
+    position: absolute;
+    height: 14vw;
+    margin-top: -1vw;
+    margin-left: 15vw;
+    width: 30vw;
+}
+
+#imgprado{
+    position: absolute;
+    height: 13.5vw;
+    margin-top: -0.9vw;
+    margin-left: 17vw;
+    width: 29vw;
+    height: 22vh;
+}
+
+#imgsantiago{
+    position: absolute;
+    height: 22vh;
+    margin-top: -1vw;
+    margin-left: -46vw;
+    width: 28vw;
+}
+
+#imgarrel{
+    position: absolute;
+    height: 17vw;
+    margin-top: -2vw;
+    margin-left: -44.5vw;
+    width: 27vw;
+
+}
+
+#imgtablao{
+    position: absolute;
+    height: 16vw;
+    margin-top: -0.5vw;
+    margin-left: -46.5vw;
+    width: 28vw;
+}
+
+#imgbaga{
+    position: absolute;
+    height: 17vw;
+    margin-top: -1vw;
+    margin-left: 17vw;
+    width: 27vw;
+}
+
+.advice1, .advice2, .advice3 {
+    border: solid rgb(29, 147, 113, 0.6) 0.5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+    margin-left: 2.2vw;
+    /* margin-top: 4vh; */
+    padding-bottom: 4vh;
+}
+
+.advice1 h3, .advice3 h3 {
+    border-bottom: solid rgb(29, 147, 113) 0.2vw;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 42vw;
+    margin-top: 1.5vw;
+    font-size: 2vw;
+    padding-bottom: 0.35vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.advice2 h3{
+    border-bottom: solid rgb(29, 147, 113) 0.2vw;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 40vw;
+    margin-top: 1.5vw;
+    font-size: 2vw;
+    padding-bottom: 0.35vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.advice3 {
+    margin-bottom: 5vw;
+}
+
 .blog {
     position: absolute;
     border-radius: 0.7vw;
@@ -176,6 +437,44 @@
     transition: height 1s ease;
     scrollbar-width: thin;
     scrollbar-color: rgb(29, 147, 113) rgb(245, 245, 245, 0);    
+}
+
+.txtsearch {
+    position: relative;
+    top: 2vw;
+    border-radius: 0.7vw;
+    font-size: 1.4vw;
+    justify-content: center;
+    align-items: center;
+    width: 18vw;
+    height: 2vw;
+    border: solid black 0.2vw;
+    padding-left: 1vw;
+    padding-top: 0.6vw;
+    padding-bottom: 0.5vw;
+    padding-right: 1vw;
+    background-color: white;
+    overflow-wrap: break-word;
+    resize: none;
+}
+
+#searchicon {
+    width: 6vw;
+}
+
+#searchbtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8.9vw;
+    left: 60vw;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: none;
+    overflow: hidden;
 }
 
 .btnsize img{
@@ -320,7 +619,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 7vw;
+    margin-top: 4vw;
     margin-left: 15vw;
 }
 

@@ -59,14 +59,14 @@
                     <img id="countryico" src="../source/frenchguy.png" alt="countryico">
             </div>
 
-        <div class="advicezone">
+            <div class="advicezone">
             <h3 id=advicetitle>Our Advices</h3> <br>
 
             <div class="advice1">
-                <div class="area_spot">
+                <div class="area Spots">
                     <h3>Spots</h3>
 
-                    <div class="effeltower">
+                    <div class="area_spots_one">
                         <p>In this area you will find the best places in France along with their respective addresses.</p>
                         <img id="imgeffeltower" src="../source/effeltower.png" alt="imgeffeltower">
                         <p id="titletower">The Effel Tower</p>
@@ -74,14 +74,14 @@
                         <a href="https://maps.app.goo.gl/gAzdFa69rzqTFeE3A" target="_blank" id="adresstower">Av. Gustave Eiffel, 75007 Paris</a>
                     </div>
 
-                    <div class="cytech">
+                    <div class="area_spots_two">
                         <img id="imgcytech" src="../source/siteduparc.png" alt="site du parc">
                         <p id="titlecytech">CY TECH</p>
                         <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
                         <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
                     </div>
 
-                    <div class="vieuxport">
+                    <div class="area_spots_three">
                         <img id="imgport" src="../source/vieux_port.png" alt="vieux_port">
                         <p id="titleport">The port of Marseille</p>
                         <p id="descriptport">Experience the timeless charm of Marseille's Old Port, where history meets modernity. Enjoy a traditional bouillabaisse at a quayside café, admire the colorful boats, and soak in the lively atmosphere. With bustling markets, stunning views of Notre-Dame de la Garde, and a unique cultural blend, the Vieux-Port offers an unforgettable Mediterranean experience.</p>
@@ -89,57 +89,59 @@
                     </div>
                 </div>
             </div>
+
             <div class="advice2">
-                <div class="area dishes">
-                    <h3>Dishes</h3>
+                <div class="area Dishes">
+                    <h3>Restaurants</h3>
 
-                    <div class="effeltower">
-                        <p>In this area you will find the best places in France along with their respective addresses.</p>
-                        <img id="imgeffeltower" src="../source/effeltower.png" alt="imgeffeltower">
-                        <p id="titletower">The Effel Tower</p>
-                        <p id="descripttower">Welcome to the Eiffel Tower, the most emblematic symbol of Paris and an architectural marvel that attracts millions of visitors every year. Inaugurated in 1889 for the Universal Exhibition, this majestic iron structure stands 324 metres high and offers a spectacular panoramic view of the City of Light.</p>
-                        <a href="https://maps.app.goo.gl/gAzdFa69rzqTFeE3A" target="_blank" id="adresstower">Av. Gustave Eiffel, 75007 Paris</a>
+                    <div class="area_dishes_one">
+                        <p>In this section, you'll find the best dishes and restaurants in France, along with their respective addresses.</p>
+                        <img id="imgcedric" src="../source/Cedric_grolet.png" alt="imgeffeltower">
+                        <p id="titlecedric">Cedric Grolet Opera Boutique</p>
+                        <p id="descripttower">Cédric Grolet, the pastry chef so popular with Parisians and tourists visiting the capital, is opening a brand new boutique x coffee shop in Paris, just a stone's throw from his famous boutique on Avenue de l'Opéra where sweet tooths from all over the world flock day after day. </p>
+                        <a href="https://cedric-grolet.com/opera/" target="_blank" id="adresstower">35 avenue de l’Opéra, 75002 Paris</a>
                     </div>
 
-                    <div class="cytech">
-                        <img id="imgcytech" src="../source/siteduparc.png" alt="site du parc">
-                        <p id="titlecytech">CY TECH</p>
-                        <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
-                        <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
+                    <div class="area_dishes_two">
+                        <img id="imgnachitos" src="../source/nachitos.jpg" alt="site du parc">
+                        <p id="titlenachitos">Nachitos</p>
+                        <p id="descriptcytech">Nachitos, the must-try fast-food restaurant in France! Renowned for its exceptional chicken, Nachitos attracts students from all over the country after classes. Whether you're looking for a quick snack or a hearty meal, Nachitos is the place to go for delicious food in a friendly atmosphere.</p><br>
+                        <a href="https://www.instagram.com/nachitos_chicken/?hl=fr" target="_blank" id="adresscytech">12 Mail des Cerclades, 95000 Cergy</a>
                     </div>
 
-                    <div class="vieuxport">
-                        <img id="imgport" src="../source/vieux_port.png" alt="vieux_port">
-                        <p id="titleport">The port of Marseille</p>
-                        <p id="descriptport">Experience the timeless charm of Marseille's Old Port, where history meets modernity. Enjoy a traditional bouillabaisse at a quayside café, admire the colorful boats, and soak in the lively atmosphere. With bustling markets, stunning views of Notre-Dame de la Garde, and a unique cultural blend, the Vieux-Port offers an unforgettable Mediterranean experience.</p>
-                        <a href="https://maps.app.goo.gl/WSkW8Hv197CkNM9p9" target="_blank" id="adressport">Vieux-Port, 13001 Marseille</a>
+                    <div class="area_dishes_three">
+                        <img id="imggrenouille" src="../source/grenouille.jpg" alt="vieux_port">
+                        <p id="titlegrenouille">La Grenouillère</p>
+                        <p id="descriptgrenouille"> This Michelin-starred restaurant is run by chef Alexandre Gauthier. It offers creative and refined cuisine in a rustic yet contemporary setting. La Grenouillère is often recognised for its innovation and exceptional quality.</p>
+                        <a href="https://lagrenouillere.fr" target="_blank" id="adressport">Rue de la Grenouillère, 62170 La Madelaine-sous-Montreuil</a>
                     </div>
                 </div>
             </div>
+
             <div class="advice3">
                 <div class="area Activities">
                     <h3>Activities</h3>
 
-                    <div class="effeltower">
-                        <p>In this area you will find the best places in France along with their respective addresses.</p>
-                        <img id="imgeffeltower" src="../source/effeltower.png" alt="imgeffeltower">
-                        <p id="titletower">The Effel Tower</p>
-                        <p id="descripttower">Welcome to the Eiffel Tower, the most emblematic symbol of Paris and an architectural marvel that attracts millions of visitors every year. Inaugurated in 1889 for the Universal Exhibition, this majestic iron structure stands 324 metres high and offers a spectacular panoramic view of the City of Light.</p>
-                        <a href="https://maps.app.goo.gl/gAzdFa69rzqTFeE3A" target="_blank" id="adresstower">Av. Gustave Eiffel, 75007 Paris</a>
+                    <div class="area_activities_one">
+                        <p>In this section, you'll find the best activities to do in France, along with their websites for bookings.</p>
+                        <img id="imgpeniche" src="../source/peniche_paris.png" alt="imgeffeltower">
+                        <p id="titlepeniche">Visit Paris by boat : Peniche</p>
+                        <p id="descriptpeniche"> With La Marina, you have the privilege of discovering Paris from another point of view, directly from the Seine. Your cruise programme starts at the foot of the Musée d'Orsay, and you'll embark on a journey full of emotion and surprises aboard our boats.</p>
+                        <a href="https://www.marina-de-paris.com/fr/visiter-paris-en-bateau/" target="_blank" id="adresstower">Paris Seine, La Marina</a>
                     </div>
 
-                    <div class="cytech">
-                        <img id="imgcytech" src="../source/siteduparc.png" alt="site du parc">
-                        <p id="titlecytech">CY TECH</p>
-                        <p id="descriptcytech">CY Tech, formerly EISTI, is a leading French public school of science and technology, economics, management, humanities and design, training mainly engineers in computer science, applied mathematics, biotechnology, chemistry and civil engineering.</p>
-                        <a href="https://maps.app.goo.gl/vdKkTkYA6h5M7yLH6" target="_blank" id="adresscytech">Av. du Parc, 95000 Cergy</a>
+                    <div class="area_activities_two">
+                        <img id="imgdisney" src="../source/disneyland.jpg" alt="site du parc">
+                        <p id="titledisney">Discover the magic of Disneyland Paris</p>
+                        <p id="descriptdisney"> Are you looking for a place to spend a pleasant day with family or friends? Enjoy a stay in our hotel near Disney for a magical holiday, a unique theme park filled with magic for wonderful memories, from the Montbriand hotel in Antony at Marne-La-Valley. Ideal for a magical day out for all the family or with friends!</p><br>
+                        <a href="https://hotel-montbriand-antony.com/disneyland-paris/" target="_blank" id="adressdisney">Montbriand Hotel</a>
                     </div>
 
-                    <div class="vieuxport">
-                        <img id="imgport" src="../source/vieux_port.png" alt="vieux_port">
-                        <p id="titleport">The port of Marseille</p>
-                        <p id="descriptport">Experience the timeless charm of Marseille's Old Port, where history meets modernity. Enjoy a traditional bouillabaisse at a quayside café, admire the colorful boats, and soak in the lively atmosphere. With bustling markets, stunning views of Notre-Dame de la Garde, and a unique cultural blend, the Vieux-Port offers an unforgettable Mediterranean experience.</p>
-                        <a href="https://maps.app.goo.gl/WSkW8Hv197CkNM9p9" target="_blank" id="adressport">Vieux-Port, 13001 Marseille</a>
+                    <div class="area_activities_three">
+                        <img id="imgcourchevel" src="../source/Courchevel.png" alt="vieux_port">
+                        <p id="titlecourchevel">Want to go skiing? Courcheval is waiting for you</p>
+                        <p id="descriptcourchevel">The ski resort of Courchevel, in the heart of the Trois Vallées, boasts the largest ski area in the world. With 600 kilometres of pistes, it attracts the average Frenchman as well as Russian oligarchs and Saudi princes. Courchevel has no fewer than 12 luxury hotels at the foot of the slopes, making it one of the most exclusive ski resorts in the world. The resort's regulars include Gérard Depardieu, Lionel Ritchie, Ewan Mc Gregor and even Morocco's King Mohamed V.</p>
+                        <a href="https://courchevel.com/fr/le-ski-a-courchevel" target="_blank" id="adressport">Station Courchevel</a>
                     </div>
                 </div>
             </div>
@@ -148,13 +150,52 @@
             <div class="blogzone">
                 <h3 id="hubtitle">The Hub</h3>
 
+                <form action="france.php#hubtitle" method="get">
+                    <input type="text" maxlength="500" name="search" id="searchbar" class="txtsearch"></input>
+                    <button type="submit" id="searchbtn"><img id="searchicon" src="../source/search.png" alt="search"></button>
+                </form>
+
                 <div class="hub">
                     <div class="section spots">
                         <h3>Spots</h3>
                             <div class="blog" id="spots">
                                     
                                 <?php foreach ($comments as $comment) :
-                                    if ($comment['category'] == 'spots') :?>
+                                    if ($comment['category'] == 'spots' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
+                                 
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel spots" type="submit" name="delcomspots" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                            <span id="com">
+                                                <?php echo str_replace($_GET['search'],'<mark>'.$_GET['search'].'</mark>',$comment['content']);?>
+                                            </span>
+                                    </div>
+
+                                    <?php elseif ($comment['category'] == 'spots' && !isset($_GET['search'])) :?>
                                  
                                     <div class="onecom">
                                         <div class="pseudlike">
@@ -184,7 +225,7 @@
                                             </span>
                                         </div>
                                         <span id="com">
-                                            <?php echo $comment['content'];?>
+                                                <?php echo $comment['content'];?>
                                         </span>
                                     </div>
 
@@ -204,8 +245,42 @@
                          <h3>Dishes</h3>
                             <div class="blog" id="dishes">
                                     
-                                <?php foreach ($comments as $comment) :
-                                    if ($comment['category'] == 'dishes') :?>
+                            <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'dishes' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
+                                 
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel dishes" type="submit" name="delcomdishes" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                            <span id="com">
+                                                <?php echo str_replace($_GET['search'],'<mark>'.$_GET['search'].'</mark>',$comment['content']);?>
+                                            </span>
+                                    </div>
+
+                                    <?php elseif ($comment['category'] == 'dishes' && !isset($_GET['search'])) :?>
                                  
                                     <div class="onecom">
                                         <div class="pseudlike">
@@ -235,7 +310,7 @@
                                             </span>
                                         </div>
                                         <span id="com">
-                                            <?php echo $comment['content'];?>
+                                                <?php echo $comment['content'];?>
                                         </span>
                                     </div>
 
@@ -255,8 +330,42 @@
                          <h3>Activities</h3>
                             <div class="blog" id="activities">
                                     
-                                <?php foreach ($comments as $comment) :
-                                    if ($comment['category'] == 'activities') :?>
+                            <?php foreach ($comments as $comment) :
+                                    if ($comment['category'] == 'activities' && isset($_GET['search']) && strpos($comment['content'],$_GET['search']) !== false) :?>
+                                 
+                                    <div class="onecom">
+                                        <div class="pseudlike">
+                                            <span id="who">
+                                                <?php echo $comment['sender'];?>
+                                            </span>
+                                            <span id="likes">
+
+                                            <?php if($comment["sender"] == $_SESSION['user']['user_name'] || $_SESSION['user']['isroot'] == 1): ?>
+                                                <form action="comments.php" method="post">
+                                                <button class="btndel activities" type="submit" name="delcomactivities" value="<?php echo $comment['id'];?>"> <img src="../source/trash.png" alt="trash"> </button>
+                                                </form>
+                                            <?php endif;?>
+
+                                            <form action="like.php" method="post">
+                                                <?php foreach ($likes as $like) :?>
+                                                <?php if ($like['comment_id'] == $comment['id'] && $like['user_id'] == $_SESSION['user']['id']) :?>
+                                                    <button type="submit" name="disliked" value="<?php echo $comment['id'];?>" style="opacity:1;" class="filled"></button>
+                                                <?php else :?>
+                                                    <button type="submit" name="liked" value="<?php echo $comment['id'];?>" style="opacity:0;" class="filled"></button>
+                                                <?php endif?>
+                                                <?php endforeach?>
+                                            </form>
+                                            
+                                            <button class="empty"></button>
+                                            <span class="likenb"><?php echo $comment['likes'];?></span>
+                                            </span>
+                                        </div>
+                                            <span id="com">
+                                                <?php echo str_replace($_GET['search'],'<mark>'.$_GET['search'].'</mark>',$comment['content']);?>
+                                            </span>
+                                    </div>
+
+                                    <?php elseif ($comment['category'] == 'activities' && !isset($_GET['search'])) :?>
                                  
                                     <div class="onecom">
                                         <div class="pseudlike">
@@ -286,7 +395,7 @@
                                             </span>
                                         </div>
                                         <span id="com">
-                                            <?php echo $comment['content'];?>
+                                                <?php echo $comment['content'];?>
                                         </span>
                                     </div>
 

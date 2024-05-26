@@ -10,19 +10,48 @@
     $ratingstatement->execute();
     $ratings = $ratingstatement->fetchAll();
 
+    $likestatement = $mysqlClient->prepare('SELECT * FROM likes WHERE user_id = :user_id');
+    $likestatement->execute([
+        'user_id' => $_SESSION['user']['id'],
+    ]);
+    $likes = $likestatement->fetchAll();
+
     if (isset($_POST['liked'])) {
-        $countcom = $mysqlClient->prepare('UPDATE comments SET likes = likes + 1 WHERE id = :id');
+        $condition = false;
 
-        $countcom->execute([
-            'id' => $_POST['liked'],
-        ]);
+        foreach ($likes as $like) {
+            if ($like['comment_id'] == $_POST['liked']){
+                $condition = true;
+            }
+        }
 
-        $addlike = $mysqlClient->prepare('INSERT INTO likes(user_id, comment_id) VALUES (:user_id, :comment_id)');
-        
-        $addlike->execute([
-            'user_id' => $_SESSION['user']['id'],
-            'comment_id' => $_POST['liked'],
-        ]);
+        if (!$condition) {
+            $countcom = $mysqlClient->prepare('UPDATE comments SET likes = likes + 1 WHERE id = :id');
+    
+            $countcom->execute([
+                'id' => $_POST['liked'],
+            ]);
+
+            $addlike = $mysqlClient->prepare('INSERT INTO likes(user_id, comment_id) VALUES (:user_id, :comment_id)');
+
+            $addlike->execute([
+                'user_id' => $_SESSION['user']['id'],
+                'comment_id' => $_POST['liked'],
+            ]);
+        }
+        else {
+            $countcom = $mysqlClient->prepare('UPDATE comments SET likes = likes - 1 WHERE id = :id');
+
+            $countcom->execute([
+                'id' => $_POST['liked'],
+            ]);
+
+            $dellike = $mysqlClient->prepare('DELETE FROM likes WHERE user_id = :user_id AND comment_id = :comment_id');
+            $dellike->execute([
+                'user_id' => $_SESSION['user']['id'],
+                'comment_id' => $_POST['liked'],
+            ]);
+            }
     }
     elseif (isset($_POST['disliked'])) {
         $countcom = $mysqlClient->prepare('UPDATE comments SET likes = likes - 1 WHERE id = :id');

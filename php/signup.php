@@ -20,9 +20,10 @@
         }
     }
     
-    $createaccount = $mysqlClient->prepare('INSERT INTO users(user_name, user_email, user_password) VALUES (:user_name, :user_email, :user_password)');
+    $createaccount = $mysqlClient->prepare('INSERT INTO users(user_name, isroot, user_email, user_password) VALUES (:user_name, :isroot, :user_email, :user_password)');
     $createaccount->execute([
         'user_name'=> $_POST['user_name'],
+        'isroot'=> 0,
         'user_email'=> $_POST['user_email'],
         'user_password'=> $_POST['user_password'],
     ]);
