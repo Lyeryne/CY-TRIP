@@ -1,14 +1,7 @@
 <header>
-    
-    <?php 
-        try
-        {
-            $mysqlClient = new PDO('mysql:host=127.0.0.1;dbname=cytrip;charset=utf8', 'root', '');
-        }
-        catch (Exception $e)
-        {
-            die('Erreur : ' . $e->getMessage());
-        }
+<?php 
+
+    require_once(__DIR__."/sqlconfig.php");
 
         $userstatement = $mysqlClient->prepare('SELECT * FROM users');
         $userstatement->execute();

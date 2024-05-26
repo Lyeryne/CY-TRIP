@@ -1,10 +1,7 @@
 <?php 
     session_start();
-?>
 
-<?php require_once(__DIR__."/sqlconfig.php") ?>
-
-<?php
+    require_once(__DIR__."/sqlconfig.php");
 
     $sqlQuery = 'SELECT * FROM users';
     $userstatement = $mysqlClient->prepare($sqlQuery);

@@ -1,10 +1,7 @@
 <?php 
     session_start();
-?>
 
-<?php require_once(__DIR__."/sqlconfig.php") ?>
-
-<?php
+    require_once(__DIR__."/sqlconfig.php");
 
     if (isset($_POST['comfrancespots'])) {
         $addcom = $mysqlClient->prepare('INSERT INTO comments(sender, country, category, content) VALUES (:sender, :country, :category, :content)');

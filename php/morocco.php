@@ -1,10 +1,7 @@
 <?php 
     session_start();
-?>
 
-<?php require_once(__DIR__."/sqlconfig.php") ?>
-
-<?php
+    require_once(__DIR__."/sqlconfig.php");
 
     $commentstatement = $mysqlClient->prepare('SELECT * FROM comments WHERE country = "morocco" ORDER BY likes DESC');
     $commentstatement->execute();
