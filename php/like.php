@@ -3,6 +3,11 @@ session_start();
 
 require_once(__DIR__."/sqlconfig.php");
 
+// Fetch all users from the database
+$userstatement = $mysqlClient->prepare('SELECT * FROM users');
+$userstatement->execute();
+$users = $userstatement->fetchAll();
+
 // Fetch all ratings from the database
 $ratingstatement = $mysqlClient->prepare('SELECT * FROM ratings');
 $ratingstatement->execute();
@@ -68,6 +73,26 @@ if (isset($_POST['dellike'])) {
 
     $delrate->execute(['liker_id'=> $liker_id, 'country'=> $country]);
 } elseif (isset($_POST['deluser'])) {
+    $dellike = $mysqlClient->prepare('DELETE FROM likes WHERE user_id = :user_id');
+    $delcom = $mysqlClient->prepare('DELETE FROM comments WHERE sender = :sender');
+    $delrate = $mysqlClient->prepare('DELETE FROM ratings WHERE liker_id = :liker_id');
+    
+    foreach ($likes as $like) {
+        if ($like['user_id'] == $_POST['deluser']) {
+            $dellikecom = $mysqlClient->prepare('UPDATE comments SET likes = likes - 1 WHERE id = :comment_id');
+            $dellikecom->execute(['comment_id'=> $like['comment_id']]);
+        }
+    }
+
+    foreach ($users as $user) {
+        if ($user['id'] == $_POST['deluser']) {
+            $username = $user['user_name'];
+        }
+    }
+    
+    $delrate->execute(['liker_id'=> $_POST['deluser']]);
+    $dellike->execute(['user_id'=> $_POST['deluser']]);
+    $delcom->execute(['sender'=> $username]);
     $deluser = $mysqlClient->prepare('DELETE FROM users WHERE id = :id');
     $deluser->execute(['id'=> $_POST['deluser']]);
 }
