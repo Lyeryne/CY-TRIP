@@ -286,7 +286,7 @@
 
                         <!-- Form to submit a new comment in "Spots" category -->
                         <form action="comments.php" method="post">
-                            <textarea maxlength="500" class="txtblog" id="txtspots" type="text" name="comfrancespots"></textarea>
+                            <textarea maxlength="1500" class="txtblog" id="txtspots" type="text" name="comfrancespots"></textarea>
                             <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
@@ -372,7 +372,7 @@
                             </div>
 
                         <form action="comments.php" method="post">
-                            <textarea maxlength="500" class="txtblog" id="txtrestaurants" type="text" name="comfrancerestaurants"></textarea>
+                            <textarea maxlength="1500" class="txtblog" id="txtrestaurants" type="text" name="comfrancerestaurants"></textarea>
                             <div class="btnsize sizerestaurants"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnrestaurants" >Send</button>
                         </form>
@@ -458,7 +458,7 @@
                             </div>
 
                         <form action="comments.php" method="post">
-                            <textarea maxlength="500" class="txtblog" id="txtactivities" type="text" name="comfranceactivities"></textarea>
+                            <textarea maxlength="1500" class="txtblog" id="txtactivities" type="text" name="comfranceactivities"></textarea>
                             <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnactivities" >Send</button>
                         </form>

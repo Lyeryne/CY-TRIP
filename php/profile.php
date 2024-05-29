@@ -101,7 +101,7 @@
                                 $count++;    
                             }
                         ?>
-                        <span>You liked <?php echo $count?> posts !</span>
+                        <span>You liked <?php echo $count-1?> posts !</span>
                     </div>  
 
                     <!-- Display the favorite trips of the user -->

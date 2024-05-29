@@ -322,7 +322,7 @@
 
                             <form action="comments.php" method="post">
                                 <!-- Textarea for entering comments, with a maximum character limit of 500 -->
-                                <textarea maxlength="500" class="txtblog" id="txtspots" type="text" name="comspainspots"></textarea>
+                                <textarea maxlength="1500" class="txtblog" id="txtspots" type="text" name="comspainspots"></textarea>
                                 <!-- Button to expand or collapse the textarea, represented by an icon -->
                                 <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                                 <!-- Button to submit the comment -->
@@ -420,7 +420,7 @@
 
                             <form action="comments.php" method="post">
                                 <!-- Textarea for entering the comment -->
-                                <textarea maxlength="500" class="txtblog" id="txtrestaurants" type="text" name="comspainrestaurants"></textarea>
+                                <textarea maxlength="1500" class="txtblog" id="txtrestaurants" type="text" name="comspainrestaurants"></textarea>
                                 <!-- Button for toggling the size of the textarea -->
                                 <div class="btnsize sizerestaurants"><img src="../source/openicon.png" alt="openicon"></div>
                                 <!-- Button for submitting the comment -->
@@ -525,7 +525,7 @@
 
                             <form action="comments.php" method="post">
                                 <!-- Textarea for entering comments with a maximum length of 500 characters -->
-                                <textarea maxlength="500" class="txtblog" id="txtactivities" type="text" name="comspainactivities"></textarea>
+                                <textarea maxlength="1500" class="txtblog" id="txtactivities" type="text" name="comspainactivities"></textarea>
                                 <!-- Button for expanding or collapsing the textarea -->
                                 <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
                                 <!-- Button for submitting the comment -->

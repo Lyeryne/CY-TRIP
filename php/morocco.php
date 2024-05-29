@@ -74,7 +74,7 @@
                     <h3>Spots</h3>
 
                     <div class="area_spots_one">
-                        <p>In this area you will find the best places in Marocco along with their respective addresses.</p>
+                        <p>In this area you will find the best places in morocco along with their respective addresses.</p>
                         <img id="imgealhoceima" src="../source/alhoceima.jpg" alt="alhoceima">
                         <p id="titlealhoceima">Quemado beach Al Hoceima</p>
                         <p id="descriptalhoceima">Al Hoceïma (northern Morocco) is the seventh most beautiful city in the world in terms of the beauty of its beaches, according to a ranking carried out by the World Guide to Urban Cities.Among the most beautiful beaches in Al Hoceïma is the Quemado beach, at the foot of the cliff bearing the same name. This magnificent beach, with its exceptionally fine sand.</p>
@@ -103,7 +103,7 @@
                     <h3>Restaurants</h3>
 
                     <div class="area_restaurants_one">
-                        <p>In this section, you'll find the best restaurants and restaurants in Marocco, along with their respective addresses.</p>
+                        <p>In this section, you'll find the best restaurants and restaurants in morocco, along with their respective addresses.</p>
                         <img id="imgamandine" src="../source/amandine.jpg" alt="amandine">
                         <p id="titleamandine">Amandine's delight</p>
                         <p id="descriptamandine">Look no further than Amandine for some of the best pastries in Marrakech. The patisserie sells both French and Moroccan pastries and cookies, and there’s a full drink menu if you’d like to sit and stay awhile. Order a plate of mixed Moroccan cookies, particularly the sweet briouat, and pair it with a French pastry such as the religieuse a choux filled with caramel cream and topped with more caramel drizzle. </p>
@@ -132,7 +132,7 @@
                     <h3>Activities</h3>
 
                     <div class="area_activities_one">
-                        <p>In this section, you'll find the best activities to do in Marocco, along with their websites for bookings.</p>
+                        <p>In this section, you'll find the best activities to do in morocco, along with their websites for bookings.</p>
                         <img id="imgdesert" src="../source/desert.jpg" alt="desert">
                         <p id="titledesert">Private Morocco Tours, Night Desert Camp</p>
                         <p id="descriptdesert">This Marrakech desert tour allow you to combine Erg Chigaga dunes with the best Sahara desert destination and the wildest one exploring Dades Gorge and Todra Gorge.</p>
@@ -255,7 +255,7 @@
 
                         <!-- Form for submitting a new comment -->                            
                         <form action="comments.php" method="post">
-                            <textarea maxlength="500" class="txtblog" id="txtspots" type="text" name="commoroccospots"></textarea>
+                            <textarea maxlength="1500" class="txtblog" id="txtspots" type="text" name="commoroccospots"></textarea>
                             <div class="btnsize sizespots"><img src="../source/openicon.png" alt="openicon"></div>
                             <button type="submit" class="btnblog" id="btnspots" >Send</button>
                         </form>
@@ -358,7 +358,7 @@
                         <!-- Form for adding a new comment related to restaurants -->
                         <form action="comments.php" method="post">
                              <!-- Textarea for entering the new comment -->
-                            <textarea maxlength="500" class="txtblog" id="txtrestaurants" type="text" name="commoroccorestaurants"></textarea>
+                            <textarea maxlength="1500" class="txtblog" id="txtrestaurants" type="text" name="commoroccorestaurants"></textarea>
                             <!-- Button for expanding the textarea (optional) -->
                             <div class="btnsize sizerestaurants"><img src="../source/openicon.png" alt="openicon"></div>
                             <!-- Button for submitting the new comment -->
@@ -468,7 +468,7 @@
                         <!-- Form for adding a new comment related to activities -->
                         <form action="comments.php" method="post">
                              <!-- Textarea for entering the new comment -->
-                            <textarea maxlength="500" class="txtblog" id="txtactivities" type="text" name="commoroccoactivities"></textarea>
+                            <textarea maxlength="1500" class="txtblog" id="txtactivities" type="text" name="commoroccoactivities"></textarea>
                             <!-- Button for expanding the textarea (optional) -->
                             <div class="btnsize sizeactivities"><img src="../source/openicon.png" alt="openicon"></div>
                              <!-- Button for submitting the new comment -->
