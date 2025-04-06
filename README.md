@@ -1,5 +1,3 @@
-﻿CY-TRIP
-
 # Cy Trip
 
 ## Description:
