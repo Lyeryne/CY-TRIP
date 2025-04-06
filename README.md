@@ -33,9 +33,6 @@ Cy Trip is a web application designed to provide users with information and reso
 4. Configure the database connection in the PHP files as needed.
 5. Launch the application through your web server.
 
-OR
-
-1. Clcik [here](https://cytrip.000webhostapp.com/) and enjoy exploring all the features of our website without any installation !
 
 ## Usage:
 
